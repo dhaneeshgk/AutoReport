@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+            <style>
+            .rdb {
+                position:absolute;
+                left:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .rdl {
+                position:absolute;
+                right:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .el {
+                position:fixed;
+                top:25%;
+                left:15%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 900px;
+                height: 50px;
+                text-align: center;
+            }
+            .addf {
+                position:absolute;
+                top:15%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                width: 100px;
+                height: 5px;
+                text-align: center;
+                display:inline-block;
+            }
+
+            .addb {
+              top:15%;
+              position:absolute;
+              border-radius: 25px;
+              border: 2px solid #73AD21;
+              padding: 10px;
+              width: 100px;
+              height: 50px;
+              text-align: center;
+            }
+            .flashes{
+                position:absolute;
+                bottom:1%;
+                right:1%;
+                border-radius: 35px;
+                border: 2px solid #73AD21;
+                width: 500px;
+                height: 70px;
+                text-align: center;
+            }
+            </style>
+        </head>
+        <body>
+            <form action="{{url_for('home')}}" method="GET">
+                <button class="rdb" type="submit">back</button>
+            </form>
+            <form action="{{url_for('logout')}}" method="POST">
+                <button class="rdl" type="submit">logout</button>
+            </form>
+        </body>
+
+        <form action="{{url_for('test_suites')}}" method="POST" enctype="multipart/form-data">
+            <input style="left:10%;width:350px;text-align:center;" class="addf" title="Choose File" type="file" name="file" accept=".xlsx"required>
+            <input style="left:41%;width:350px;" class="addf" title="Enter Password To Be Set" placeholder="DESCRIPTION" type="text" name="description" required>
+            <button style="left:72%;" name="do" class="addb" value="add" type="submit">add</button>
+            <button style="left:80%;" name="do" class="addb" value="update" type="submit" disabled="true">update</button>
+        </form>
+
+        <table class = "el">
+            <thead>
+                <th>TEST SUITE</th>
+                <th>DESCRIPTION</th>
+                <th>UNDER USE</th>
+                <th>ENVIRONMENT</th>
+                <th>ACTIONS</th>
+            </thead>
+            <tbody>
+                {% if not test_suites %}
+                <div style="position:absolute;top:35%;left:45%;">
+                    No Test Suites Added Yet
+                </div>
+                {% endif %}
+                {% if test_suites %}
+                    {% for suite in test_suites %}
+                    <tr name="{{ suite.name }}" title="{{ suite.name }}">
+                        <form action="{{url_for('test_suites')}}" method="POST">
+                        <td name="name">
+                            {{ suite.name.split(".")[0] }}
+                        </td>
+                        <td name="description">
+                            {{ suite.description }}
+                        </td>
+                        <td name="status">
+                            {{ suite.status }}
+                        </td>
+                        <td name="environment">
+                            {{ suite.environment }}
+                        </td>
+                        <td>
+                            <button name="edit" value="{{ suite.name }}"
+                            type="submit" disabled="true">edit</button>
+                            <!-- <button name="download" href="http://127.0.0.1:5300/docs?file={{ suite.name }}" value="{{ suite.name }}"
+                            type="link">download</button> -->
+                            <a href="http://127.0.0.1:5300/docs?file={{ suite.name }}" >download</a>
+                            <button name="delete" value="{{ suite.name }}"
+                            type="submit">delete</button>
+                        </td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <!-- <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul> -->
+            <div class="flashes">
+                {{ messages[0] }}
+            </div>
+          {% endif %}
+        {% endwith %}
+    </body>
+</html>

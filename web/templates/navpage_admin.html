@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+            <style>
+            .rd {
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .nvcon {
+                position:absolute;
+                left:45%;
+                right:30%;
+                top:20%;
+                bottom:20%;
+                border-radius: 11px;
+                border: 2px solid #73AD20;
+                padding: 10px;
+                width: 100px;
+                height: 280px;
+                align: center;
+            }
+            .flashes{
+                position:absolute;
+                bottom:1%;
+                right:1%;
+                border-radius: 35px;
+                border: 2px solid #73AD21;
+                width: 500px;
+                height: 70px;
+                text-align: center;
+            }
+            </style>
+        </head>
+        <body>
+            <nav class = "nvcon" style="align:top;">
+            <form action="{{url_for('envs')}}" method="GET">
+                <button class="rd" type="submit">environments</button>
+            </form>
+            <form action="{{url_for('schedules')}}" method="GET">
+                <button class="rd" type="submit">schedules</button>
+            </form>
+            <form action="{{url_for('execute')}}" method="GET">
+                <button class="rd" type="submit">execute</button>
+            </form>
+            <form action="{{url_for('users')}}" method="GET">
+                <button class="rd" type="submit">users</button>
+            </form>
+            <form action="{{url_for('test_suites')}}" method="GET">
+                <button class="rd" type="submit">test suites</button>
+            </form>
+            <form action="{{url_for('manage_vms')}}" method="GET">
+                <button class="rd" type="submit">virtual machines</button>
+            </form>
+            <form action="{{url_for('logout')}}" method="POST">
+                <button class="rd" type="submit">logout</button>
+            </form>
+        </nav>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <!-- <ul class=flashes>
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+                </ul> -->
+                <div class="flashes">
+                    {{ messages[0] }}
+                </div>
+              {% endif %}
+            {% endwith %}
+    </body>
+
+</html>

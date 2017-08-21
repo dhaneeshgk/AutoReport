@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+            <style>
+            .rdb {
+                position:absolute;
+                left:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .rdl {
+                position:absolute;
+                right:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .el {
+                position:fixed;
+                top:25%;
+                left:25%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 700px;
+                height: 50px;
+                text-align: center;
+            }
+            .addf {
+                position:absolute;
+                top:15%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                width: 100px;
+                height: 5px;
+                text-align: center;
+                display:inline-block;
+            }
+
+            .addb {
+              top:15%;
+              position:absolute;
+              border-radius: 25px;
+              border: 2px solid #73AD21;
+              padding: 10px;
+              width: 100px;
+              height: 50px;
+              text-align: center;
+            }
+            .flashes{
+                position:absolute;
+                bottom:1%;
+                right:1%;
+                border-radius: 35px;
+                border: 2px solid #73AD21;
+                width: 500px;
+                height: 70px;
+                text-align: center;
+            }
+            </style>
+        </head>
+        <body>
+            <form action="{{url_for('home')}}" method="GET">
+                <button class="rdb" type="submit">back</button>
+            </form>
+            <form action="{{url_for('logout')}}" method="POST">
+                <button class="rdl" type="submit">logout</button>
+            </form>
+        </body>
+
+        <form action="{{url_for('manage_vms')}}" method="POST">
+            <input style="left:15%;width:200px;" class="addf" title="Enter VM Name" placeholder="VM NAME" type="text" name="vm" required>
+            <input style="left:35%;width:200px;" class="addf" title="Enter Operating System Of VM" placeholder="OS" type="text" name="os" required>
+            <select style="left:55%;width:60px;height:49px;" class="addf" title="Office365" placeholder="office365" type="text" name="office365" required>Office365
+              <option name="office365" selected>Y</option>
+              <option value="office365" >N</option>
+            </select>
+            <select style="left:62%;width:60px;height:49px;" class="addf" title="underuse" placeholder="underuse" type="text" name="status" required>Office365
+              <option selected>N</option>
+            </select>
+            <button style="left:69%;" name="do" class="addb" value="add" type="submit">add</button>
+            <button style="left:77%;" name="do" class="addb" value="update" type="submit" disabled="true">update</button>
+        </form>
+
+        <table class = "el">
+            <thead>
+                <th>VM NAME</th>
+                <th>OPERATING SYSTEM</th>
+                <th>OFFICE365</th>
+                <th>UNDER USE</th>
+                <th>ACTIONS</th>
+            </thead>
+            <tbody>
+                {% if not vms %}
+                <div style="position:absolute;top:35%;left:45%;">
+                    No Virtaul Machines Added Yet
+                </div>
+                {% endif %}
+                {% for vm in vms %}
+                <tr name="{{ vm.vm }}" title="{{ vm.vm }}">
+                    <form action="{{url_for('manage_vms')}}" method="POST">
+                    <td name="name">
+                        {{ vm.vm }}
+                    </td>
+                    <td name="os" title="Operating System">
+                        {{ vm.os }}
+                    </td>
+                    <td name="os" title="Office365">
+                        {{ vm.office365 }}
+                    </td>
+                    <td name="status">
+                        {{ vm.status }}
+                    </td>
+                    <td>
+                        <button name="edit" value="{{ vm.vm }}"
+                        type="submit" disabled="true">edit</button>
+                        <button name="delete" value="{{ vm.vm }}"
+                        type="submit">delete</button>
+                    </td>
+                    </form>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <!-- <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul> -->
+            <div class="flashes">
+                {{ messages[0] }}
+            </div>
+          {% endif %}
+        {% endwith %}
+    </body>
+</html>

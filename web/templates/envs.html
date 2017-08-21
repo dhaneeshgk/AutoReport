@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+            <style>
+            .rdb {
+                position:absolute;
+                left:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .rdl {
+                position:absolute;
+                right:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .el {
+                position:fixed;
+                right:20%;
+                top:35%;
+                /*bottom: 45%;*/
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 700px;
+                height: 50px;
+                text-align: center;
+            }
+            .addf {
+                position:absolute;
+                top:25%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                width: 100px;
+                height: 5px;
+                text-align: center;
+                display:inline-block;
+            }
+
+            .addb {
+              top:25%;
+              position:absolute;
+              border-radius: 25px;
+              border: 2px solid #73AD21;
+              padding: 10px;
+              width: 100px;
+              height: 50px;
+              text-align: center;
+            }
+
+            .flashes{
+                position:absolute;
+                bottom:1%;
+                right:1%;
+                border-radius: 35px;
+                border: 2px solid #73AD21;
+                width: 500px;
+                height: 70px;
+                text-align: center;
+            }
+        </style>
+        </head>
+        <body>
+            <form action="{{url_for('home')}}" method="GET">
+                <button class="rdb" type="submit">back</button>
+            </form>
+            <form action="{{url_for('logout')}}" method="POST">
+                <button class="rdl" type="submit">logout</button>
+            </form>
+
+            <form action="{{url_for('envs')}}" method="POST">
+                <input style="left:10%;width:145px;" class="addf" title="Enter Environment Name" placeholder="NAME" type="text" name="environment" required>
+                <input style="left:25%;width:400px;" class="addf" title="Enter Environment URL" placeholder="URL" type="text" name="url" required>
+                <select style="left:60%;width:60px;height:49px;" class="addf" title="Enter Environment status" placeholder="STATUS" type="text" name="status" required>
+                  <option name="status" value="UP">UP</option>
+                  <option name="status" value="DOWN">DOWN</option>
+                </select>
+                <input style="left:65%;width:170px;" class="addf" title="description" placeholder="DESCRIPTION" type="text" name="description" required>
+                <button style="right:10%;" name="do" class="addb" value="add" type="submit">add</button>
+                <button style="right:2%;" name="do" class="addb" value="update" type="submit" disabled="true">update</button>
+            </form>
+            <table class = "el">
+                <thead>
+                    <th>NAME</th>
+                    <th>URL</th>
+                    <th>STATUS</th>
+                    <th>ACTIONS</th>
+                </thead>
+                <tbody>
+                    {% if not envs %}
+                    <div style="position:absolute;top:35%;left:45%;">
+                        No Environments Added Yet
+                    </div>
+                    {% endif %}
+                    {% for env in envs %}
+                    <tr name="{{ env.name }}" title="{{ env.name }}">
+                        <td>
+                            <label name="name" value="{{ env.name }}">{{ env.name }}</label>
+                        </td>
+                        <td name="url" value="{{ env.url  }}">{{ env.url }}</td>
+                        <td name="status" value="{{ env.status  }}">{{ env.status }}</td>
+                        <td>
+                            <form action="{{url_for('envs')}}" method="POST">
+                                <button name="{{ env.status }}" value="{{ env.name }}"
+                                type="submit">{{ env.status }}</button>
+                                <button name="{{ env.name  }}" value="edit"
+                                type="submit" disabled="true">EDIT</button>
+                                <button name="{{ env.name }}" value="delete"
+                                type="submit">DELETE</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <!-- <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul> -->
+            <div class="flashes">
+                {{ messages[0] }}
+            </div>
+          {% endif %}
+        {% endwith %}
+        </body>
+    </html>

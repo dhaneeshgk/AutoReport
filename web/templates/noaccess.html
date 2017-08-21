@@ -1,0 +1,53 @@
+<DOCTYPE html>
+  <html lang="en">
+    <head>
+      <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+
+      <style>
+      .rdb {
+          position:absolute;
+          left:5%;
+          top:5%;
+          border-radius: 25px;
+          border: 2px solid #73AD21;
+          padding: 10px;
+          width: 100px;
+          height: 40px;
+          text-align: center;
+      }
+      .rdl {
+          position:absolute;
+          right:5%;
+          top:5%;
+          border-radius: 25px;
+          border: 2px solid #73AD21;
+          padding: 10px;
+          width: 100px;
+          height: 40px;
+          text-align: center;
+      }
+      .md  {
+          position:fixed;
+          right:30%;
+          left:30%;
+          top:30%;
+          bottom:30%;
+          padding: 10px;
+          width: 500px;
+          height: 20px;
+          text-align: center;
+
+      }
+
+      </style>
+    </head>
+    <form action="{{url_for('home')}}" method="GET">
+        <button class="rdb" type="submit">back</button>
+    </form>
+    <form action="{{url_for('logout')}}" method="POST">
+        <button class="rdl" type="submit">logout</button>
+    </form>
+      <p class="md">
+         You Dont Have Acesss To The Page , Please Contact Adminstartor For Page Access.
+      </p>
+  </html>

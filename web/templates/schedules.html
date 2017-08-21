@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+            <style>
+            .rdb {
+                position:absolute;
+                left:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .rdl {
+                position:absolute;
+                right:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .el {
+                position:fixed;
+                top:25%;
+                left:1%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 1250px;
+                height: 50px;
+                text-align: center;
+            }
+            .addf {
+                position:absolute;
+                top:15%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                width: 100px;
+                height: 5px;
+                text-align: center;
+                display:inline-block;
+            }
+
+            .addb {
+              top:15%;
+              position:absolute;
+              border-radius: 25px;
+              border: 2px solid #73AD21;
+              padding: 10px;
+              width: 100px;
+              height: 50px;
+              text-align: center;
+            }
+            .flashes{
+                position:absolute;
+                bottom:1%;
+                right:1%;
+                border-radius: 35px;
+                border: 2px solid #73AD21;
+                width: 500px;
+                height: 70px;
+                text-align: center;
+            }
+            </style>
+        </head>
+        <body>
+            <form action="{{url_for('home')}}" method="GET">
+                <button class="rdb" type="submit">back</button>
+            </form>
+            <form action="{{url_for('logout')}}" method="POST">
+                <button class="rdl" type="submit">logout</button>
+            </form>
+
+            <form action="{{url_for('schedules')}}" method="POST">
+                <input style="left:0%;width:145px;" class="addf" title="Enter Task Name" placeholder="TASK NAME" type="text" name="task" required>
+                <input style="left:15%;width:250px;" class="addf" title="Enter Task Description" placeholder="TASK DESCRIPTION" type="text" name="description" required>
+                <select style="left:38%;width:80px;height:49px;" class="addf" title="Select Environment" placeholder="ENVIRONMENT" name="environment" required>
+                {% for env in envs %}
+                  <option name="environment" value="{{ env.name }}">{{ env.name }}</option>
+                {% endfor %}
+                </select>
+                <select style="left:45%;width:160px;height:49px;" class="addf" title="Select Test Suite" placeholder="TEST SUITE" name="test_suite" required>
+                {% for suite in test_suites %}
+                  <option name="test_suite" value="{{ suite.name }}">{{ suite.name }}</option>
+                {% endfor %}
+                  <!-- <option name="test_suite" value="upload">upload</option> -->
+                </select>
+                <select style="left:58%;width:80px;height:49px;" class="addf" title="Select VM" placeholder="VIRTUAL MACHINE" name="vm" required>
+                <!-- <option name="vm" value="available" selected>available</option> -->
+                {% for vm in vms %}
+                  <option name="vm" value="{{ vm.name }}">{{ vm.name }}</option>
+                {% endfor %}
+                </select>
+                <input style="left:64%;width:105px;" class="addf" title="Enter Date" placeholder="YYYY-MM-DD" type="text" name="schedule_date" required>
+                <input style="left:76%;width:55px;" class="addf" title="Enter Task TIME" placeholder="HH:MM" type="text" name="schedule_time" required>
+                <button style="left:84%;" name="do" class="addb" value="add" type="submit">add</button>
+                <button style="left:92%;" name="do" class="addb" value="update" type="submit" disabled="true">update</button>
+            </form>
+
+            <table class = "el">
+                <thead>
+                    <!-- <th>DATE</th>
+                    <th>TIME</th> -->
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Vm</th>
+                    <th>Env</th>
+                    <th>Test_Suite</th>
+                    <th>Schedule_Date</th>
+                    <th>Schedule_Time</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    {% if not schedules %}
+                    <div style="position:absolute;top:35%;left:45%;">
+                        No Schedules Added Yet
+                    </div>
+                    {% endif %}
+                    {% for schedule in schedules %}
+                    <tr name="{{ schedule.task }}" title="{{ schedule.task }}">
+                        <form action="{{url_for('schedules')}}" method="POST">
+                            <!-- <td name="date" value="{{ schedule.date }}">
+                                {{ schedule.date }}
+                            </td>
+                            <td name="time" value="{{ schedule.time }}">
+                                {{ schedule.time }}
+                            </td> -->
+                            <td name="task" value="{{ schedule.task }}">
+                                {{ schedule.task }}
+                            </td>
+                            <td name="descripton" value="{{ schedule.description  }}">
+                                {{ schedule.description }}</td>
+                            <td name="vm" value="{{ schedule.vm  }}">
+                                {{ schedule.vm }}
+                            </td>
+                            <td name="environment" value="{{ schedule.environment }}">
+                                {{ schedule.environment }}
+                            </td>
+                            <td name="test_suite" value="{{ schedule.test_suite }}">
+                                {{ schedule.test_suite }}
+                            </td>
+                            <td name="schedule_date" value="{{ schedule.schedule_date }}">
+                                {{ schedule.schedule_date }}
+                            </td>
+                            <td name="schedule_time" value="{{ schedule.schedule_time }}">
+                                {{ schedule.schedule_time }}
+                            </td>
+                            <td name="status" value="{{ schedule.status }}">
+                                {{ schedule.status }}
+                            </td>
+                            <td>
+                                <button name="edit" value="{{ schedule.task  }}"
+                                type="submit" disabled>edit</button>
+                                <button name="status" value="{{ schedule.task  }}"
+                                type="submit" disabled>W</button>
+                                <button name="delete" value="{{ schedule.task  }}"
+                                type="submit">delete</button>
+                            </td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <!-- <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul> -->
+            <div class="flashes">
+                {{ messages[0] }}
+            </div>
+          {% endif %}
+        {% endwith %}
+        </body>
+    </html>

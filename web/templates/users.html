@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+            <style>
+            .rdb {
+                position:absolute;
+                left:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .rdl {
+                position:absolute;
+                right:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .el {
+                position:fixed;
+                right:20%;
+                top: 35%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 700px;
+                height: 50px;
+                text-align: center;
+            }
+            .addf {
+                position:absolute;
+                top:25%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                width: 100px;
+                height: 5px;
+                text-align: center;
+                display:inline-block;
+            }
+
+            .addb {
+              top:25%;
+              position:absolute;
+              border-radius: 25px;
+              border: 2px solid #73AD21;
+              padding: 10px;
+              width: 100px;
+              height: 50px;
+              text-align: center;
+            }
+            .flashes{
+                position:absolute;
+                bottom:1%;
+                right:1%;
+                border-radius: 35px;
+                border: 2px solid #73AD21;
+                width: 500px;
+                height: 70px;
+                text-align: center;
+            }
+            </style>
+        </head>
+        <body>
+            <form action="{{url_for('home')}}" method="GET">
+                <button class="rdb" type="submit">back</button>
+            </form>
+            <form action="{{url_for('logout')}}" method="POST">
+                <button class="rdl" type="submit">logout</button>
+            </form>
+
+            <form action="{{url_for('users')}}" method="POST">
+                <input style="left:5%;width:250px;" class="addf" title="Enter Your Full Name" placeholder="FULL NAME" type="text" name="name" required>
+                <input style="left:28%;width:250px;" class="addf" title="Enter Email Id" placeholder="EMAIL ID" type="email" name="email" required>
+                <input style="left:51%;width:200px;" class="addf" title="Enter Password To Be Set" placeholder="PASSWORD TO BE SET" type="text" name="password" required>
+                <select style="left:71%;width:60px;height:49px;" class="addf" title="Select Role" placeholder="ROLE" type="text" name="role" required>
+                  <option name="role" value="user">USER</option>
+                  <option name="role" value="admin">ADMIN</option>
+                </select>
+                <button style="left:77%;" name="do" class="addb" value="add" type="submit">add</button>
+                <button style="left:86%;" name="do" class="addb" value="update" type="submit" disabled="true">update</button>
+            </form>
+
+            <table class = "el">
+                <thead>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>ROLE</th>
+                    <th>ACTIONS</th>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr name="{{ user.email }}" title="{{ user.email }}">
+                        <form action="{{url_for('users')}}" method="POST">
+                            <td>
+                                <label name="name" value="{{ user.name }}">{{ user.name }}</label>
+                            </td>
+                            <td>
+                                <label name="email" value="{{ user.email }}">{{ user.email }}</label>
+                            </td>
+                            <td name="role" value="{{ user.role  }}">{{ user.role }}</td>
+                            <td>
+                                <button name="edit" value="{{ user.email }}"
+                                type="submit">edit</button>
+                                <button name="delete" value="{{ user.email }}"
+                                type="submit">delete</button>
+                            </td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <!-- <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul> -->
+            <div class="flashes">
+                {{ messages[0] }}
+            </div>
+          {% endif %}
+        {% endwith %}
+        </body>
+    </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+            <style>
+            .rdb {
+                position:absolute;
+                left:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+            .rdl {
+                position:absolute;
+                right:5%;
+                top:5%;
+                border-radius: 25px;
+                border: 2px solid #73AD21;
+                padding: 10px;
+                width: 100px;
+                height: 40px;
+                text-align: center;
+            }
+
+            .addf {
+                position:absolute;
+                top:15%;
+                border-radius: 200px;
+                border: 2px solid #73AD21;
+                width: 200px;
+                height: 20px;
+                text-align: center;
+                display:inline-block;
+            }
+
+            </style>
+        </head>
+        <body>
+            <form action="{{url_for('home')}}" method="GET">
+                <button class="rdb" type="submit">back</button>
+            </form>
+            <form action="{{url_for('logout')}}" method="POST">
+                <button class="rdl" type="submit">logout</button>
+            </form>
+            <form action="{{url_for('execute')}}" method="POST" enctype="multipart/form-data">
+                <input style="left:20%;" class="addf" title="Choose File" type="file" name="file" required>
+                <button style="top:17%;left:40%;width:100px;height:50px;" class="addf" type="submit">upload</button>
+        </body>
+    </html>
