@@ -53,7 +53,11 @@ class manage_users(Resource):
         return jsonify(res_v)
 
     def post(self):
-        users_l =[list(i)[0] for i in dbs.get_table("users")["values"]]
+        u_t = dbs.get_table("users")
+        u_tv = u_t['values']
+        u_tk = u_t['keys']
+        users_l =[list(i)[u_tk.index('email')] for i in u_tv]
+        # users_l =[list(i)[0] for i in dbs.get_table("users")["values"]]
         status = []
         data = request.get_json()
         res_v = validate_headers(request.headers)
@@ -80,8 +84,13 @@ class manage_users(Resource):
             return jsonify(res_v)
 
     def put(self):
+        u_t = dbs.get_table("users")
+        u_tv = u_t['values']
+        u_tk = u_t['keys']
+        users_l =[list(i)[u_tk.index('email')] for i in u_tv]
 
-        users_l =[list(i)[0] for i in dbs.get_table("users")["values"]]
+
+        # users_l =[list(i)[0] for i in dbs.get_table("users")["values"]]
         data = request.get_json()
         res_v = validate_headers(request.headers)
         if res_v["status"]:
@@ -103,7 +112,12 @@ class manage_users(Resource):
         data = request.get_json()
         res_v = validate_headers(request.headers)
         if res_v["status"]:
-            users_l =[list(i)[0] for i in dbs.get_table("users")["values"]]
+            u_t = dbs.get_table("users")
+            u_tv = u_t['values']
+            u_tk = u_t['keys']
+            users_l =[list(i)[u_tk.index('email')] for i in u_tv]
+
+            # users_l =[list(i)[0] for i in dbs.get_table("users")["values"]]
             if not data["email"] in users_l:
                 return {"status":False,"remarks":"user not exists to delete"}
             else:
@@ -155,7 +169,12 @@ class validate_auth(Resource):
     def post(self):
         res_v = validate_headers(request.headers,validate_token=False)
         if res_v["status"]:
-            users_lp =[[list(i)[0],list(i)[1],list(i)[2]] for i in dbs.get_table("users")["values"]]
+            u_t = dbs.get_table("users")
+            u_tv = u_t['values']
+            u_tk = u_t['keys']
+            users_lp =[[list(i)[u_tk.index('email')],list(i)[u_tk.index('password')],list(i)[u_tk.index('access_token')]] for i in u_tv]
+
+            # users_lp =[[list(i)[0],list(i)[1],list(i)[2]] for i in ["values"]]
             users_l = [i[0] for i in users_lp]
             users_t = [i[2] for i in users_lp]
             data = request.get_json()
@@ -171,7 +190,12 @@ class logout(Resource):
         res_v = validate_headers(request.headers,validate_token=False)
         access_token = "nnnnnnnnnnnnnnnnnnnn"
         if res_v["status"]:
-            users_lp =[[list(i)[0],list(i)[1],list(i)[2]] for i in dbs.get_table("users")["values"]]
+            u_t = dbs.get_table("users")
+            u_tv = u_t['values']
+            u_tk = u_t['keys']
+            users_lp =[[list(i)[u_tk.index('email')],list(i)[u_tk.index('password')],list(i)[u_tk.index('access_token')]] for i in u_tv]
+
+            # users_lp =[[list(i)[0],list(i)[1],list(i)[2]] for i in dbs.get_table("users")["values"]]
             users_t = [i[2] for i in users_lp]
             data = request.get_json()
             if data["access_token"] in users_t:
