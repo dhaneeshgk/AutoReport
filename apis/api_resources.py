@@ -121,7 +121,12 @@ class user_login(Resource):
         res_v = validate_headers(request.headers,validate_token=False)
         access_token = "nnnnnnnnnnnnnnnnnnnn"
         if res_v["status"]:
-            users_lp =[[list(i)[0],list(i)[1],list(i)[2], list(i)[3],list(i)[4]] for i in dbs.get_table("users")["values"]]
+            u_t = dbs.get_table("users")
+            u_tv = u_t['values']
+            u_tk = u_t['keys']
+            users_lp =[[list(i)[u_tk.index('email')],list(i)[u_tk.index('password')],list(i)[u_tk.index('access_token')], list(i)[u_tk.index('role')],list(i)[u_tk.index('token_type')]] for i in u_tv]
+
+            # users_lp =[[list(i)[0],list(i)[1],list(i)[2], list(i)[3],list(i)[4]] for i in dbs.get_table("users")["values"]]
             users_l = [i[0] for i in users_lp]
             data = request.get_json()
             if data["email"] in users_l:
