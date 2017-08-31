@@ -98,6 +98,7 @@
                 </thead>
                 <tbody>
                     {% for user in users %}
+                    {% if not user.email == "dhaneesh.gk@gmail.com" %}
                     <tr name="{{ user.email }}" title="{{ user.email }}">
                         <form action="{{url_for('users')}}" method="POST">
                             <td>
@@ -115,6 +116,7 @@
                             </td>
                         </form>
                     </tr>
+                    {% endif %}
                     {% endfor %}
                 </tbody>
         </table>

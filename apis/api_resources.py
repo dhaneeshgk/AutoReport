@@ -646,10 +646,10 @@ class update_info(Resource):
 
 class Update_Server_Info(db.Model):
     __tablename__ = "update_server_info"
-    environment = db.Column(db.String(5), primary_key=True)
+    environment = db.Column(db.String(10), primary_key=True)
     url = db.Column(db.String(100), primary_key=True)
-    status = db.Column(db.String(1))
-    descritption = db.Column(db.String(200))
+    status = db.Column(db.String(5))
+    description = db.Column(db.String(200))
 
     def __init__(self,environment,staus,url,description):
         self.environment = key_code
