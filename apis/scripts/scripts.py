@@ -1,4 +1,5 @@
 from dbs import dbs
+from scripts import mail_generator
 
 
 
@@ -27,3 +28,14 @@ def validate_headers(headers,validate_token=True,validate_content_type=True):
                 return {"status":False,"remarks":"please provide access token"}
     except Exception as e:
         return {"status":False,"remarks":str(e)}
+
+def drop_user_creation_email(data):
+
+    host="wittyautoreport@gmail.com"
+    password = "WittyReport"
+    to = [data['email']]
+    subject = "web app automation report"
+    body = "<div>Hi {name},</div><br><div>Welcome to AutoReport, An account is created  with {email} and your password would be <div><b>{password}.</b></div></div><br><div>Login at <a href='http://52.172.27.204:443/'> <u>AutoReport Website </u></a></div><br><br>".format(name=data['name'].capitalize(),email=data['email'],password=data['password'])+"Regards,<br>AutoReport Support"
+    format_type = "html"
+    mail = mail_generator.Mail(host,password)
+    mail.send_mail(to, subject, body, format=format_type)

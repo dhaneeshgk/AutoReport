@@ -5,7 +5,7 @@ from json import dumps
 from flask_jsonpify import jsonify
 # from flask.ext.sqlalchemy import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
-from scripts.scripts import validate_headers
+from scripts.scripts import validate_headers,drop_user_creation_email
 from sqlalchemy.sql import func
 from config import db_path
 from dbs import dbs
@@ -70,9 +70,9 @@ class manage_users(Resource):
                     if i["email"] in users_l:
                         status.append({"status":False,"remarks":"user '{0}' already exists".format(i['email'])})
                     else:
-                        print(i)
                         d_s = dbs.insert_row("users",which_=i)
                         if d_s["status"]:
+                            drop_user_creation_email(i)
                             status.append({"status":True,"remarks":"user with email id '{0}' added successfully".format(i['email'])})
                         else:
                             d_s.update({"remarks":"user '{0}' was not added".format(i['email'])})
