@@ -236,8 +236,9 @@ class manage_vms(Resource):
         res_v = validate_headers(request.headers)
         if res_v["status"]:
             d_s = dbs.get_table("vms")
+            d_sk = d_s['keys']
             if d_s['status']:
-                return {'vms': [{"vm":i[0],"os":i[1],"office365":i[2],"status":i[3]} for i in d_s['values']]}
+                return {'vms': [{j:i[d_sk.index(j)] for j in d_sk} for i in d_s['values']]}
             else:
                 return jsonify(d_s)
         else:
