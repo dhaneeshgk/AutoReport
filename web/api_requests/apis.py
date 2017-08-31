@@ -1,8 +1,8 @@
 import requests
 import json
+import config
 
-
-url = "http://127.0.0.1:5300/"
+url = config.config['api_url']
 headers = {"Content-Type":"application/json"}
 
 def set_up():

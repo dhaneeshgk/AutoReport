@@ -120,7 +120,7 @@
                             type="submit" disabled="true">edit</button>
                             <!-- <button name="download" href="http://127.0.0.1:5300/docs?file={{ suite.name }}" value="{{ suite.name }}"
                             type="link">download</button> -->
-                            <a href="http://127.0.0.1:5300/docs?file={{ suite.name }}" >download</a>
+                            <a href="{{ config.download_url }}docs?file={{ suite.name }}" >download</a>
                             {% if suite.status in ["A","Y"] %}
                                 <button name="delete" value="{{ suite.name }}"
                                 type="submit" title="Delete button is disabled as it is alloted(A)/under use(Y)" disabled="true">delete</button>

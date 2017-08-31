@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, make_response,redirect,url_fo
 from api_requests import apis
 from werkzeug import secure_filename
 import os
+import config
 
 app = Flask(__name__)
 
@@ -320,7 +321,7 @@ def test_suites():
     test_suites = apis.get_test_suites(
     access_token=request.cookies['auto_report_wp'])['test_suites']
     return render_template("test suites.html",
-    test_suites=test_suites)
+    test_suites=test_suites,config=config.config)
 
 
 @app.route("/manage_vms",methods=['GET','POST'])
