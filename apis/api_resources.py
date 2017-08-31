@@ -218,12 +218,12 @@ class logout(Resource):
 class Manage_VMS(db.Model):
     __tablename__ = "vms"
     vm = db.Column(db.String(120), primary_key=True)
-    vm_type = db.Column(db.String(1))
+    vm_type = db.Column(db.String(7))
     os = db.Column(db.String(20))
     office365 = db.Column(db.String(1))
     status = db.Column(db.String(1))
 
-    def __init__(self, vm,os,office365,status):
+    def __init__(self, vm,os,office365,status,vm_type):
         self.vm = vm
         self.os = os
         self.vm_type = vm_type
