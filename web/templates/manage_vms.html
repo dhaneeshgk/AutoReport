@@ -79,8 +79,12 @@
         </body>
 
         <form action="{{url_for('manage_vms')}}" method="POST">
-            <input style="left:15%;width:200px;" class="addf" title="Enter VM Name" placeholder="VM NAME" type="text" name="vm" required>
-            <input style="left:35%;width:200px;" class="addf" title="Enter Operating System Of VM" placeholder="OS" type="text" name="os" required>
+            <input style="left:5%;width:200px;" class="addf" title="Enter VM Name" placeholder="VM NAME" type="text" name="vm" required>
+            <input style="left:25%;width:200px;" class="addf" title="Enter Operating System Of VM" placeholder="OS" type="text" name="os" required>
+            <select style="left:45%;width:80px;height:49px;" class="addf" title="VM TYPE" placeholder="office365" name="vm_type" required>Office365
+              <option name="vm_type" selected>VIRTAUL</option>
+              <option name="vm_type">REMOTE</option>
+            </select>
             <select style="left:55%;width:60px;height:49px;" class="addf" title="Office365" placeholder="office365" name="office365" required>Office365
               <option name="office365" selected>Y</option>
               <option name="office365">N</option>
@@ -96,6 +100,7 @@
             <thead>
                 <th>VM NAME</th>
                 <th>OPERATING SYSTEM</th>
+                <th>VM TYPE</th>
                 <th>OFFICE365</th>
                 <th>UNDER USE</th>
                 <th>ACTIONS</th>
@@ -114,6 +119,9 @@
                     </td>
                     <td name="os" title="Operating System">
                         {{ vm.os }}
+                    </td>
+                    <td name="os" title="VM Type">
+                        {{ vm.vm_type }}
                     </td>
                     <td name="os" title="Office365">
                         {{ vm.office365 }}
