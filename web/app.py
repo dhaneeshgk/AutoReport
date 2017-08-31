@@ -284,8 +284,8 @@ def test_suites():
                         # print(ud_res)
                         if ud_res["status"]:
                             flash(res["remarks"])
-                            if os.path.exists(file_path+file.filename):
-                                os.unlink(file_path+file.filename)
+                            # if os.path.exists(file_path+file.filename):
+                            #     os.unlink(file_path+file.filename)
                         else:
                             data = {'test_suites':[file.filename]}
                             res = apis.delete_test_suites(request.cookies.get('auto_report_wp'),data=data)
@@ -311,9 +311,9 @@ def test_suites():
                 # print("hey")
                 file_path = os.getcwd()+"/test_suites_ware_house/"
                 # print(file_path)
-                # if os.path.exists(file_path+secure_filename(request.form['delete'])):
-                #     # print(request.form['delete'])
-                #     os.unlink(file_path+secure_filename(request.form['delete']))
+                if os.path.exists(file_path+request.form['delete']):
+                    # print(request.form['delete'])
+                    os.unlink(file_path+request.form['delete'])
                 flash(res['remarks'])
 
 

@@ -725,7 +725,7 @@ class update_server_info(Resource):
 
 class Test_Suite(db.Model):
     __tablename__ = "test_suites"
-    name = db.Column(db.String(5), primary_key=True)
+    name = db.Column(db.String(50), primary_key=True)
     description = db.Column(db.String(100))
     status = db.Column(db.String(1))
     environment = db.Column(db.String(50))
