@@ -35,7 +35,7 @@ def drop_user_creation_email(data):
     password = "WittyReport"
     to = [data['email']]
     subject = "web app automation report"
-    body = "<div>Hi {name},</div><br><div>Welcome to AutoReport, An account is created  with {email} and your password would be <div><b>{password}.</b></div></div><br><div>Login at <a href='http://52.172.27.204:443/'> <u>AutoReport Website </u></a></div><br><br>".format(name=data['name'].capitalize(),email=data['email'],password=data['password'])+"Regards,<br>AutoReport Support"
+    body = "<div>Hi {name},</div><br><div>Welcome to AutoReport, An account is created  with <u><b><i>{email}</i></b></u> and your password would be <b>{password}.</b></div></div><br><div>Login at <a href='http://52.172.27.204:443/'> <u>AutoReport Website </u></a></div><br><br>".format(name=data['name'].capitalize(),email=data['email'],password=data['password'])+"Regards,<br>AutoReport Support"
     format_type = "html"
     mail = mail_generator.Mail(host,password)
     mail.send_mail(to, subject, body, format=format_type)
