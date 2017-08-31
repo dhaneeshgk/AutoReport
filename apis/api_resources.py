@@ -889,3 +889,4 @@ api.add_resource(docs,'/docs')
 if __name__ == '__main__':
     db.create_all()
     app.run(port=5300,debug=True)
+    # app.run(host='0.0.0.0',port=80,debug=False)

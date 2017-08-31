@@ -157,8 +157,8 @@ def create_keycode():
 def admin_create_user():
     try:
         conn = db_connect.connect()
-        query = conn.execute("INSERT INTO users VALUES ('dhaneesh.gk@gmail.com','welcome123','nnnnnnnnnnnnnnnnnnnn','OWNER','a','Dhaneesh G K')")
-        query = conn.execute("INSERT INTO users VALUES ('admin@autoreport.com','welcome','nnnnnnnnnnnnnnnnnnnn','OWNER','a','admin')")
+        query = conn.execute("INSERT INTO users VALUES ('Dhaneesh G K','dhaneesh.gk@gmail.com','welcome123','nnnnnnnnnnnnnnnnnnnn','OWNER','a')")
+        query = conn.execute("INSERT INTO users VALUES ('admin','admin@autoreport.com','welcome','nnnnnnnnnnnnnnnnnnnn','OWNER','a')")
         return {"status":True,"remarks":"success"}
     except Exception as e:
         return {"status":False,"remarks":"error {0}".format(str(e))}
