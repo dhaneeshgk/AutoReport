@@ -228,10 +228,16 @@ class manage_vms(Resource):
                         status.append({"status":False,"remarks":"virtual machine '{0}' already exists in database".format(i['vm'])})
                     else:
                         d_s = dbs.insert_row("vms",which_=i)
+                        # print(d_s)
                         if d_s["status"]:
                             status.append({"status":True,"remarks":"virtual machine '{0}' added successfully".format(i['vm'])})
+                            data = {"vm":i["vm"],"schedules":"N","envs":"N","test_suites":"N","vms":"N","stop_vm":"N"}
+                            i_s = dbs.insert_row(table_name="update_database",which_=data)
+                            u_s = dbs.update_row(table_name="update_database",which_={"vms":"Y"})
+                            # print(u_s)
                         else:
                             status.append({"status":False,"remarks":"virtual machine '{0}' not added".format(i['vm'])})
+                u_s = dbs.update_row(table_name="update_database",which_={"vms":"Y"})
                 return jsonify(status)
             else:
                 return jsonify({"status":False,"remarks":"Invalid Json"})
@@ -252,6 +258,7 @@ class manage_vms(Resource):
                 where_ = {"vm":data["vm"]}
                 d_s = dbs.update_row(table_name="vms",)
                 if d_s["status"]:
+                    u_s = dbs.update_row(table_name="update_database",which_={"vms":"Y"})
                     return jsonify({"status":True,"remarks":"virtual machine info is updated successfully","vm":data["vm"]})
                 else:
                     return jsonify(d_s)
@@ -271,6 +278,9 @@ class manage_vms(Resource):
                     d_s = dbs.delete_row(table_name="vms",where_={"vm":i})
                     if d_s["status"]:
                         status.append({"status":True,"remarks":"virtual machine '{0}' is deleted successfully".format(i)})
+                        data = {"vm":i}
+                        u_s = dbs.delete_row(table_name="update_database",where_=data)
+                        u_s = dbs.update_row(table_name="update_database",which_={"vms":"Y"})
                     else:
                         return jsonify(d_s)
         else:
@@ -310,12 +320,39 @@ class schedule_vms(Resource):
     def get(self):
         res_v = validate_headers(request.headers)
         if res_v["status"]:
-            d_s = dbs.get_table(table_name="scheduled_tasks")
-            if d_s["status"]:
-                tasks = {'tasks':[{d_s["keys"][row.index(i)]:i for i in row}for row in d_s["values"]]}
-                return jsonify(tasks)
+            if "?task" in request.url:
+                task = request.url.split("?task=")[-1].replace("%20"," ")
+                d_s = dbs.get_row(table_name="scheduled_tasks",where_={"task":task},which_="all")
+                # print(d_s)
+                if d_s["status"]:
+                    row = d_s["values"][0]
+                    tasks = {'task':{d_s["keys"][row.index(i)]:i for i in row}}
+                    # tasks ={}
+                    return jsonify(tasks)
+                else:
+                    return jsonify(d_s)
+            elif "?env" in request.url:
+                env = request.url.split("?env=")[-1].replace("%20"," ")
+                # print(env)
+                d_s = dbs.get_row(table_name="scheduled_tasks",where_={"environment":env},which_="all")
+                print(d_s["values"])
+                if d_s["status"]:
+                    if not d_s["values"]:
+                        tasks = {'tasks':{}}
+                    else:
+                        row = d_s["values"]
+                        tasks = {'tasks':[{d_s["keys"][row.index(i)]:i for i in row}for row in d_s["values"]]}
+                    # tasks ={}
+                    return jsonify(tasks)
+                else:
+                    return jsonify(d_s)
             else:
-                return jsonify(d_s)
+                d_s = dbs.get_table(table_name="scheduled_tasks")
+                if d_s["status"]:
+                    tasks = {'tasks':[{d_s["keys"][row.index(i)]:i for i in row}for row in d_s["values"]]}
+                    return jsonify(tasks)
+                else:
+                    return jsonify(d_s)
         else:
             return jsonify(res_v)
 
@@ -328,11 +365,25 @@ class schedule_vms(Resource):
                 if not data["task"] in tasks:
                     t = datetime.today()
                     data.update({"id":"".join(str(t.timestamp()).split(".")),"date":str(t.date()),
-                    "time":str(t.time()).split(".")[0],"status":"Y"})
-                    print(data)
+                    "time":str(t.time()).split(".")[0],"status":"W"})
                     d_s = dbs.insert_row(table_name="scheduled_tasks",which_=data)
+                    u_s = dbs.update_row(table_name="update_database",which_={"schedules":"Y"})
                     if d_s["status"]:
-                        return jsonify({"status":True,"remarks":"Task '{0}' has been scheduled successfully".format(data["task"])})
+                        ts_where= {"name":data[i]+".xlsx" for i in data if i in ["test_suite"]}
+                        ts_which = {"environment":data[i] for i in data if i in ["environment"]}
+                        ts_which.update({"status":"A"})
+                        ts_d_s = dbs.update_row(table_name="test_suites",where_=ts_where,which_=ts_which)
+                        # print(ts_d_s)
+                        if ts_d_s["status"]:
+                            vs_where= {"vm":data[i] for i in data if i in ["vm"]}
+                            vs_which = {"status":"A"}
+                            vs_d_s = dbs.update_row(table_name="vms",where_=vs_where,which_=vs_which)
+                            if vs_d_s["status"]:
+                                return jsonify({"status":True,"remarks":"Task '{0}' has been scheduled successfully".format(data["task"])})
+                            else:
+                                return jsonify({"status":Flase,"remarks":"schedule '{0}' added successfully but there was problem updating vm status ".format(data["task"])})
+                        else:
+                            return jsonify({"status":Flase,"remarks":"schedule '{0}' added successfully but there was problem while updating ".format(data["task"])})
                     else:
                         return jsonify(d_s)
                 else:
@@ -346,19 +397,77 @@ class schedule_vms(Resource):
 
         data = request.get_json()
         res_v = validate_headers(request.headers)
-        tasks = [list(i)[3] for i in dbs.get_row(table_name="scheduled_tasks")["values"]]
+        tasks = [list(i)[3] for i in dbs.get_table(table_name="scheduled_tasks")["values"]]
 
         if res_v["status"]:
             if data and "task" in data:
-
                 if data["task"] in tasks:
-                    which_ = {i:data[i] for i in data if i!= "task"}
-                    where_ = {"task": data["task"]}
+
+                    task_db = dbs.get_row(table_name="scheduled_tasks",where_={"id":data["id"]},
+                                            which_="all")
+                    old_task = {task_db["keys"][task_db["values"][0].index(i)]:i for i in task_db["values"][0]}
+
+                    which_ = {i:data[i] for i in data if i!= "id"}
+                    where_ = {"id": data["id"]}
                     d_s = dbs.update_row(table_name="scheduled_tasks",which_=which_,where_=where_)
+
                     if d_s["status"]:
-                        return jsonify({"status":False,"remarks":"task '{0}' as been upated successfully".format(data["format"])})
+                        u_s = dbs.update_row(table_name="update_database",which_={"schedules":"Y"})
+                        g_ts = dbs.get_row(table_name="scheduled_tasks",where_=where_,which_="all")
+                        # print(g_ts)
+                        ag_ts = dbs.get_table(table_name="scheduled_tasks")
+                        st_g = {g_ts["keys"][g_ts["values"][0].index(j)]:j for j in g_ts["values"][0]}
+                        st_ga = [{ag_ts["keys"][i.index(j)]:j for j in i} for i in ag_ts["values"]]
+                        if "status" in data:
+                            ts_where= {"name":st_g[i]+".xlsx" for i in st_g if i in ["test_suite"]}
+                            ts_which = {"environment":None for i in st_g if i in ["environment"]}
+                            c_st = {"R":"Y","C":"N"}
+                            if data["status"] in c_st:
+                                ts_which.update({"status":c_st[data["status"]]})
+                                ts_d_s = dbs.update_row(table_name="test_suites",where_=ts_where,which_=ts_which)
+
+                            if not ts_d_s["status"]:
+                                print("error updating the test_suites status")
+
+                            vs_where= {"vm":st_g[i] for i in st_g if i in ["vm"]}
+                            if data["status"] in c_st:
+                                vs_which = {"status":c_st[data["status"]]}
+                                vs_d_s = dbs.update_row(table_name="vms",where_=vs_where,which_=vs_which)
+
+                            if not ts_d_s["status"]:
+                                print("error updating the virtul machine status")
+
+                        if "test_suite" in data:
+                            if not data["test_suite"] == old_task["test_suite"]:
+
+                                ## set
+                                sts_where = {"name":data["test_suite"]+".xlsx"}
+                                sts_which = {"environment":st_g["environment"]}
+                                sts_which.update({"status":"A"})
+                                sts_d_s = dbs.update_row(table_name="test_suites",where_=sts_where,which_=sts_which)
+
+                                #reset
+                                rts_where = {"name":old_task["test_suite"]+".xlsx"}
+                                rts_which = {"environment":None}
+                                rts_which.update({"status":"N"})
+                                rts_d_s = dbs.update_row(table_name="test_suites",where_=rts_where,which_=rts_which)
+
+                        if "vm" in data:
+                            if not data["vm"] == old_task["vm"]:
+
+                                # set
+                                vs_where= {"vm":data["vm"]}
+                                vs_which = {"status":"A"}
+                                vs_d_s = dbs.update_row(table_name="vms",where_=vs_where,which_=vs_which)
+
+                                #reset
+                                vs_where= {"vm":old_task["vm"]}
+                                vs_which = {"status":"N"}
+                                vs_d_s = dbs.update_row(table_name="vms",where_=vs_where,which_=vs_which)
+
+                        return jsonify({"status":True,"remarks":"task '{0}' as been updated successfully".format(data["task"])})
                     else:
-                        jsonify(d_s)
+                        return jsonify({"status":False,"remarks":"task '{0}' is not been updated successfully".format(data["task"])})
                 else:
                     jsonify({"staus":False,"remarks":"task not exists to update","task":data["task"]})
             else:
@@ -375,9 +484,29 @@ class schedule_vms(Resource):
         if res_v["status"]:
             if data and "task" in data:
                 if data["task"] in tasks:
+                    g_ts = dbs.get_row(table_name="scheduled_tasks",where_=data,which_="all")
+                    ag_ts = dbs.get_table(table_name="scheduled_tasks")
+                    # print(g_ts["keys"])
+                    st_g = {g_ts["keys"][g_ts["values"][0].index(j)]:j for j in g_ts["values"][0]}
+                    st_ga = [{ag_ts["keys"][i.index(j)]:j for j in i} for i in ag_ts["values"]]
                     d_s = dbs.delete_row(table_name="scheduled_tasks",where_=data)
                     if d_s["status"]:
-                        return jsonify({"status":False,"remarks":"Task '{0}' as been deleted successfully".format(data["task"])})
+                        u_s = dbs.update_row(table_name="update_database",which_={"schedules":"Y"})
+                        ts_where= {"name":st_g[i]+".xlsx" for i in st_g if i in ["test_suite"]}
+                        ts_which = {"environment":None for i in st_g if i in ["environment"]}
+                        ts_which.update({"status":"N"})
+                        ts_d_s = dbs.update_row(table_name="test_suites",where_=ts_where,which_=ts_which)
+                        # print(ts_d_s)
+                        if ts_d_s["status"]:
+                            vs_where= {"vm":st_g[i] for i in st_g if i in ["vm"]}
+                            vs_which = {"status":"N"}
+                            vs_d_s = dbs.update_row(table_name="vms",where_=vs_where,which_=vs_which)
+                            if vs_d_s["status"]:
+                                return jsonify({"status":False,"remarks":"Task '{0}' as been deleted successfully".format(data["task"])})
+                            else:
+                                return jsonify({"status":False,"remarks":"Task '{0}' as not been deleted successfully".format(data["task"])})
+                        else:
+                            return jsonify({"status":False,"remarks":"Task '{0}' as not been deleted successfully".format(data["task"])})
                     else:
                         jsonify(d_s)
                 else:
@@ -390,16 +519,24 @@ class schedule_vms(Resource):
 
 class Update_Details(db.Model):
     __tablename__ = "update_database"
-    key_code = db.Column(db.String(5), primary_key=True)
-    status = db.Column(db.String(1))
-    description = db.Column(db.String(200))
-    counts = db.Column(db.Integer)
+    vm = db.Column(db.String(50), primary_key=True)
+    schedules = db.Column(db.String(1), primary_key=True)
+    envs = db.Column(db.String(1), primary_key=True)
+    test_suites = db.Column(db.String(1), primary_key=True)
+    vms = db.Column(db.String(1), primary_key=True)
+    stop_vm = db.Column(db.String(1), primary_key=True)
+    start_vm = db.Column(db.String(1), primary_key=True)
 
-    def __init__(self,key_code,staus,description,count):
-        self.key_code = key_code
-        self.status = status
-        self.description = description
-        self.counts = count
+    def __init__(self,vm,schedule,env,test_suite,vms,stop_vm,start_vm):
+        self.vm = vm
+        self.schedule = schedule
+        self.env = env
+        self.test_suite = test_suite
+        self.vms = vms
+        self.stop_vm = stop_vm
+        self.start_vm = start_vm
+
+
 
 class update_info(Resource):
 
@@ -440,18 +577,20 @@ class update_info(Resource):
         res_v = validate_headers(request.headers)
 
         if res_v["status"]:
-            if "key_code" in data:
+            if "vm" in data:
                 which_ = {}
                 if "status" in data:
                     which_.update({"status":data["status"]})
-                if "description" in data:
-                    which_.update({"description":data["description"]})
+                if "stop_vm" in data:
+                    which_.update({"stop_vm":data["stop_vm"]})
+                if "start_vm" in data:
+                    which_.update({"start_vm":data["start_vm"]})
 
-                d_s = dbs.update_row(table_name="update_database",where_={"key_code":data["key_code"]},
+                d_s = dbs.update_row(table_name="update_database",where_={"vm":data["vm"]},
                     which_=which_)
 
                 if d_s["status"]:
-                    return jsonify({"status":True,"remarks":"Key Code updated successfully"})
+                    return jsonify({"status":True,"remarks":"vm updated successfully"})
                 else:
                     return jsonify(d_s)
             else:
@@ -465,8 +604,8 @@ class update_info(Resource):
         res_v = validate_headers(request.headers)
 
         if res_v["status"]:
-            if "key_code" in data:
-                d_s = dbs.delete_row(table_name="update_database",where_={"key_code":data["key_code"]})
+            if "vm" in data:
+                d_s = dbs.delete_row(table_name="update_database",where_={"vm":data["vm"]})
                 if d_s["status"]:
                     return jsonify({"status":True,"remarks":"Key Code deleted successfully"})
                 else:
@@ -508,6 +647,7 @@ class update_server_info(Resource):
                 d_s = dbs.insert_row(table_name="update_server_info",which_=data)
                 if d_s["status"]:
                     # print("pass")
+                    u_s = dbs.update_row(table_name="update_database",which_={"envs":"Y"})
                     return jsonify({"status":True,"remarks":"Environment '{0}' is added successfully".format(data["environment"])})
                 else:
                     # print("fail")
@@ -526,11 +666,12 @@ class update_server_info(Resource):
                 where_ = {"environment":data["environment"]}
                 which_ = dict()
                 if "url" in data:
-                    which_.udate({"url":data["url"]})
+                    which_.update({"url":data["url"]})
                 if "status" in data:
-                    which_.udate({"status":data["status"]})
-                d_s = dbs.insert_row(table_name="update_server_info",where_=where_,which_=which_)
+                    which_.update({"status":data["status"]})
+                d_s = dbs.update_row(table_name="update_server_info",where_=where_,which_=which_)
                 if d_s["status"]:
+                    u_s = dbs.update_row(table_name="update_database",which_={"envs":"Y"})
                     return jsonify({"status":True,"remarks":"Environment '{0}' status is updated successfully".format(data["environment"])})
                 else:
                     return jsonify(d_s.update({"remarks":"Environment '{0}' status is not updated successfully".format(data["environment"])}))
@@ -545,6 +686,7 @@ class update_server_info(Resource):
             if data:
                 d_s = dbs.delete_row(table_name="update_server_info",where_={"environment":data["environment"]})
                 if d_s["status"]:
+                    u_s = dbs.update_row(table_name="update_database",which_={"envs":"Y"})
                     return jsonify({"status":True,"remarks":"Environment '{0}' status is deleted successfully".format(data["environment"])})
                 else:
                     return jsonify(d_s.update({"remarks":"Environment '{0}' status is not deleted successfully".format(data["environment"])}))
@@ -589,6 +731,7 @@ class test_suites(Resource):
                 if not data["name"] in test_suites_p:
                     d_s = dbs.insert_row(table_name="test_suites",which_=data)
                     if d_s["status"]:
+                        u_s = dbs.update_row(table_name="update_database",which_={"test_suites":"Y"})
                         return jsonify({"status":True,"remarks":"Test Suite '{0}' is added successfully".format(data["name"])})
                     else:
                         d_s.update({"status":False,"remarks":"Test Suite '{0}' is not added successfully".format(data["name"])})
@@ -610,11 +753,12 @@ class test_suites(Resource):
                 where_ = {"environment":data["environment"]}
                 which_ = dict()
                 if "url" in data:
-                    which_.udate({"url":data["url"]})
+                    which_.update({"url":data["url"]})
                 if "status" in data:
-                    which_.udate({"status":data["status"]})
+                    which_.update({"status":data["status"]})
                 d_s = dbs.insert_row(table_name="update_server_info",where_=where_,which_=which_)
                 if d_s["status"]:
+                    u_s = dbs.update_row(table_name="update_database",which_={"test_suites":"Y"})
                     return jsonify({"status":True,"remarks":"Environment '{0}' status is updated successfully".format(data["environment"])})
                 else:
                     return jsonify(d_s.update({"remarks":"Environment '{0}' status is not updated successfully".format(data["environment"])}))
@@ -633,6 +777,7 @@ class test_suites(Resource):
                     if i in test_suites_p:
                         d_s = dbs.delete_row(table_name="test_suites",where_={'name':i})
                         if d_s["status"]:
+                            u_s = dbs.update_row(table_name="update_database",which_={"test_suites":"Y"})
                             return jsonify({"status":True,"remarks":"Test Suite '{0}' is deleted successfully".format(i)})
                         else:
                             return jsonify(d_s.update({"remarks":"Test Suite '{0}' is not deleted successfully".format(i)}))
@@ -648,7 +793,7 @@ class docs(Resource):
 
     def get(self):
         file_name = request.url.split("file=")[-1]
-        print(file_name,"hey")
+        # print(file_name,"hey")
         file_path = os.getcwd()+"/server_ware_house/"
         if file_name:
             if os.path.exists(file_path+file_name):
@@ -688,6 +833,16 @@ class docs(Resource):
             return jsonify(res_v)
 
 
+class setup(Resource):
+    def get(self):
+        try:
+            res = dbs.admin_create_user()
+            return res
+        except Exception as e:
+            return jsonify({"status":False,"remarks":"error {0}".format(str(e))})
+
+
+api.add_resource(setup,'/setup')
 api.add_resource(manage_users, '/manage_users')
 api.add_resource(user_login,'/user_login')
 api.add_resource(validate_auth,'/validate_auth')

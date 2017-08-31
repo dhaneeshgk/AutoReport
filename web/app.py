@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, make_response,redirect,url_for,send_file,flash
+from flask import Flask, render_template, request, make_response,redirect,url_for,send_file,flash,Markup
 from api_requests import apis
 from werkzeug import secure_filename
 import os
@@ -13,6 +13,7 @@ def index():
         con = apis.validate_auth(request.cookies.get('auto_report_wp'))
         if con["status"]:
             return redirect(url_for("home"))
+    res = apis.set_up()
     return redirect("/login")
 
 @app.route('/login',methods = ['GET'])
@@ -40,6 +41,7 @@ def home():
                 resp = make_response(render_template('navpage_admin.html'))
             resp.set_cookie("auto_report_wp",con["access_token"])
             resp.set_cookie("token_type",con["token_type"])
+            # flash(Markup('Successfully registered, please click <a href="/me" class="alert-link">here</a>'))
             return resp
         else:
             flash(con['remarks'])
@@ -92,9 +94,59 @@ def envs():
             data = {'environment':list(request.form.keys())[0]}
             res = apis.delete_environment(request.cookies['auto_report_wp'],data=data)
             flash(res['remarks'])
-        elif "UP" in request.form:
-            print(request.form)
+        elif "down" in request.form:
+            # print(request.form)
+            res = apis.get_scheduled_tasks(request.cookies['auto_report_wp'],data={"environment":request.form["down"]})
+            # print(res)
+            if 'tasks' in res:
+                if res['tasks']:
+                    vms = [i['vm'] for i in res['tasks'] if i["status"]=="Y"]
+                else:
+                    vms = []
 
+                if not vms:
+                    res = apis.update_environment(request.cookies['auto_report_wp'],data={
+                    "environment":request.form["down"],"status":"DOWN"})
+                else:
+                    for i in vms:
+                        res_u = apis.updates(request.cookies['auto_report_wp'],data={"vm":i,"stop_vm":"Y",
+                        "start_vm":"N"})
+
+                    vms = True
+                    while vms:
+                        res = apis.get_scheduled_tasks(request.cookies['auto_report_wp'],
+                            data={"environment":request.form["down"]})
+
+                        if 'tasks' in res:
+                            if res['tasks']:
+                                vms = [i['vm'] for i in res['tasks'] if i["status"]=="R"]
+                            else:
+                                vms = []
+
+                    res = apis.update_environment(request.cookies['auto_report_wp'],data={
+                    "environment":request.form["down"],"status":"DOWN"})
+                flash("Thank you for intimating '{0}' server status , all the scheduled auomation running on '{0}' environment have been stopped now".format(request.form["down"]))
+
+        elif "up" in request.form:
+            res = apis.get_scheduled_tasks(request.cookies['auto_report_wp'],data={"environment":request.form["up"]})
+            # print(res)
+            if 'tasks' in res:
+                if res['tasks']:
+                    vms = [i['vm'] for i in res['tasks'] if i["status"]=="S"]
+                else:
+                    vms = []
+
+                if not vms:
+                    res = apis.update_environment(request.cookies['auto_report_wp'],data={
+                    "environment":request.form["up"],"status":"UP"})
+                else:
+                    for i in vms:
+                        res_u = apis.updates(request.cookies['auto_report_wp'],data={"vm":i,"stop_vm":"N",
+                        "start_vm":"Y"})
+
+                    res = apis.update_environment(request.cookies['auto_report_wp'],data={
+                    "environment":request.form["up"],"status":"UP"})
+                flash("Thank you intimating '{0}' server  status, all the scheduled automation will be resumed now".format(request.form["up"]))
 
     return render_template("envs.html",
     envs=apis.get_envs(request.cookies['auto_report_wp'])["environments"])
@@ -103,24 +155,24 @@ def envs():
 
 @app.route("/schedules",methods=['GET','POST'])
 def schedules():
+    fill_i = {}
+    # print(request.form)
     if 'auto_report_wp' in request.cookies:
         con = apis.validate_auth(request.cookies.get('auto_report_wp'))
         if not con["status"]:
             return redirect(url_for('login'))
 
-    if request.method == 'GET':
-        pass
 
-
-    elif request.method == 'POST':
+    if request.method == 'POST':
         if "do" in request.form:
             if request.form["do"] == "add":
                 data = {i:request.form[i] for i in request.form if not i in ['do']}
-                print(data)
+                # print(data)
                 res = apis.add_schedules_tasks(access_token=request.cookies['auto_report_wp'],data=data)
                 if res["status"]:
                     flash(res["remarks"])
                 flash(res["remarks"])
+
         elif "delete" in request.form:
                 data = {"task":request.form["delete"]}
                 res = apis.delete_schedules_tasks(access_token=request.cookies['auto_report_wp'],data=data)
@@ -129,17 +181,43 @@ def schedules():
                 flash(res["remarks"])
 
 
+        elif "edit" in request.form:
+            print("in edit")
+            data = {"task":request.form['edit']}
+            schedule = apis.get_scheduled_tasks(access_token=request.cookies['auto_report_wp'],data=data)
+            # print(schedule)
+            fill_i = schedule['task']
+            print(fill_i)
+
+        elif "update" in request.form:
+            gdata = {"task":request.form["update"]}
+            # print(gdata)
+            schedule = apis.get_scheduled_tasks(access_token=request.cookies['auto_report_wp']
+            ,data=gdata)
+            # print(schedule)
+            data = {i:request.form[i] for i in request.form if not i in ['update']}
+            data.update({"id":schedule["task"]["id"],"task":request.form["update"]})
+            # print(data)
+            res = apis.update_scheduled_tasks(access_token=request.cookies['auto_report_wp'],data=data)
+            # print(res)
+            if res["status"]:
+                flash(res["remarks"])
+            flash(res["remarks"])
+
+
+
     schedules = apis.get_scheduled_tasks(access_token=request.cookies['auto_report_wp'])
     envs = apis.get_envs(access_token=request.cookies['auto_report_wp'])['environments']
     envs = [{'name':i['name']} for i in envs]
     vms = apis.get_vms(access_token=request.cookies['auto_report_wp'])['vms']
-    vms = [{'name':i['vm']} for i in vms if i['status']=='Y']
+    vms = [{'name':i['vm']} for i in vms if i['status']=='N']
+    print(envs)
     test_suites = apis.get_test_suites(
     access_token=request.cookies['auto_report_wp'])['test_suites']
-    test_suites = [{'name':i['name'].split(".")[0] for i in test_suites}]
+    test_suites = [{'name':i['name'].split(".")[0]} for i in test_suites]
     # print(test_suites)
     return render_template("schedules.html",envs=envs,vms=vms,
-    schedules=schedules['tasks'],test_suites=test_suites)
+    schedules=schedules['tasks'],test_suites=test_suites,fill_i=fill_i)
 
 
 @app.route("/users",methods=['GET','POST'])
@@ -183,8 +261,8 @@ def test_suites():
             con = apis.validate_auth(request.cookies.get('auto_report_wp'))
             if not con["status"]:
                 return redirect(url_for('login'))
-            elif request.cookies['token_type'] != 'a':
-                return render_template('noaccess.html')
+            # elif request.cookies['token_type'] != 'a':
+            #     return render_template('noaccess.html')
 
     elif request.method == 'POST':
 
@@ -294,4 +372,4 @@ def execute():
 
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0',debug=False)

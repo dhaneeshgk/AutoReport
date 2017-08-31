@@ -38,15 +38,24 @@
         </head>
         <body>
             <nav class = "nvcon" style="align:top;">
-            <form action="{{url_for('envs')}}" method="POST">
+            <form action="{{url_for('envs')}}" method="GET">
                 <button class="rd" type="submit">environments</button>
             </form>
-            <form action="{{url_for('schedules')}}" method="POST">
+            <form action="{{url_for('schedules')}}" method="GET">
                 <button class="rd" type="submit">schedules</button>
             </form>
-            <form action="{{url_for('schedules')}}" method="POST">
+            <!-- <form action="{{url_for('execute')}}" method="GET">
                 <button class="rd" type="submit">execute</button>
+            </form> -->
+            <!-- <form action="{{url_for('users')}}" method="GET">
+                <button class="rd" type="submit">users</button>
+            </form> -->
+            <form action="{{url_for('test_suites')}}" method="GET">
+                <button class="rd" type="submit">test suites</button>
             </form>
+            <!-- <form action="{{url_for('manage_vms')}}" method="GET">
+                <button class="rd" type="submit">virtual machines</button>
+            </form> -->
             <form action="{{url_for('logout')}}" method="POST">
                 <button class="rd" type="submit">logout</button>
             </form>

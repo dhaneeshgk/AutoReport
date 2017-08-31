@@ -81,9 +81,9 @@
         <form action="{{url_for('manage_vms')}}" method="POST">
             <input style="left:15%;width:200px;" class="addf" title="Enter VM Name" placeholder="VM NAME" type="text" name="vm" required>
             <input style="left:35%;width:200px;" class="addf" title="Enter Operating System Of VM" placeholder="OS" type="text" name="os" required>
-            <select style="left:55%;width:60px;height:49px;" class="addf" title="Office365" placeholder="office365" type="text" name="office365" required>Office365
+            <select style="left:55%;width:60px;height:49px;" class="addf" title="Office365" placeholder="office365" name="office365" required>Office365
               <option name="office365" selected>Y</option>
-              <option value="office365" >N</option>
+              <option name="office365">N</option>
             </select>
             <select style="left:62%;width:60px;height:49px;" class="addf" title="underuse" placeholder="underuse" type="text" name="status" required>Office365
               <option selected>N</option>
@@ -124,8 +124,13 @@
                     <td>
                         <button name="edit" value="{{ vm.vm }}"
                         type="submit" disabled="true">edit</button>
-                        <button name="delete" value="{{ vm.vm }}"
-                        type="submit">delete</button>
+                        {% if vm.status in ["A","Y"] %}
+                            <button name="delete" value="{{ vm.vm }}"
+                            type="submit" disabled="true" title="Delete button is disabled as it is alloted(A)/under use(Y)">delete</button>
+                        {% else %}
+                            <button name="delete" value="{{ vm.vm }}"
+                            type="submit">delete</button>
+                        {% endif %}
                     </td>
                     </form>
                 </tr>

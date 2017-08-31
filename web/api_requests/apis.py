@@ -5,6 +5,12 @@ import json
 url = "http://127.0.0.1:5300/"
 headers = {"Content-Type":"application/json"}
 
+def set_up():
+    res = requests.get(url=url+"setup")
+    con = res.content.decode('utf-8')
+    # print(con)
+    return json.loads(con)
+
 def login(email_=None,password_=None):
     res = requests.post(url=url+"user_login",headers=headers,
     data = json.dumps({"email":email_,"password":password_}))
@@ -35,21 +41,39 @@ def add_user(access_token=None,data=None):
     con = res.content.decode('utf-8')
     return json.loads(con)
 
+def update_user(access_token=None,data=None):
+    headers.update({'Authorization':access_token})
+    res = requests.put(url=url+"manage_users",headers=headers,data=json.dumps(data))
+    con = res.content.decode('utf-8')
+    return json.loads(con)
+
 def delete_user(access_token=None,data=None):
     headers.update({'Authorization':access_token})
     res = requests.delete(url=url+"manage_users",headers=headers,data=json.dumps(data))
     con = res.content.decode('utf-8')
     return json.loads(con)
 
-def get_scheduled_tasks(access_token=None):
+def get_scheduled_tasks(access_token=None,data=None):
     headers.update({'Authorization':access_token})
-    res = requests.get(url=url+"schedule_vms",headers=headers)
+
+    if data and "task" in data:
+        res = requests.get(url=url+"schedule_vms?task={0}".format(data["task"]),headers=headers)
+    elif data and "environment" in data:
+        res = requests.get(url=url+"schedule_vms?env={0}".format(data["environment"]),headers=headers)
+    else:
+        res = requests.get(url=url+"schedule_vms",headers=headers)
     con = res.content.decode('utf-8')
     return json.loads(con)
 
 def add_schedules_tasks(access_token=None,data=None):
     headers.update({'Authorization':access_token})
     res = requests.post(url=url+"schedule_vms",headers=headers,data=json.dumps(data))
+    con = res.content.decode('utf-8')
+    return json.loads(con)
+
+def update_scheduled_tasks(access_token=None,data=None):
+    headers.update({'Authorization':access_token})
+    res = requests.put(url=url+"schedule_vms",headers=headers,data=json.dumps(data))
     con = res.content.decode('utf-8')
     return json.loads(con)
 
@@ -74,6 +98,12 @@ def add_vms(access_token=None,data=None):
     con = res.content.decode('utf-8')
     return json.loads(con)
 
+def update_vms(access_token=None,data=None):
+    headers.update({'Authorization':access_token})
+    res = requests.put(url=url+"manage_vms",headers=headers,data=json.dumps(data))
+    con = res.content.decode('utf-8')
+    return json.loads(con)
+
 def delete_vms(access_token=None,data=None):
     headers.update({'Authorization':access_token})
     res = requests.delete(url=url+"manage_vms",headers=headers,data=json.dumps(data))
@@ -91,6 +121,12 @@ def get_test_suites(access_token=None):
 def add_test_suites(access_token=None,data=None):
     headers.update({'Authorization':access_token})
     res = requests.post(url=url+"test_suites",headers=headers,data=json.dumps(data))
+    con = res.content.decode('utf-8')
+    return json.loads(con)
+
+def update_test_suites(access_token=None,data=None):
+    headers.update({'Authorization':access_token})
+    res = requests.put(url=url+"test_suites",headers=headers,data=json.dumps(data))
     con = res.content.decode('utf-8')
     return json.loads(con)
 
@@ -131,6 +167,13 @@ def add_environemt(access_token=None,data=None):
     # print(con)
     return json.loads(con)
 
+def update_environment(access_token=None,data=None):
+    headers.update({'Authorization':access_token})
+    res = requests.put(url=url+"envs",headers=headers,data=json.dumps(data))
+    con = res.content.decode('utf-8')
+    # print(con)
+    return json.loads(con)
+
 def delete_environment(access_token=None,data=None):
     headers.update({'Authorization':access_token})
     res = requests.delete(url=url+"envs",headers=headers,data=json.dumps(data))
@@ -138,5 +181,27 @@ def delete_environment(access_token=None,data=None):
     return json.loads(con)
 
 
+def get_updates(access_token=None):
+    headers.update({'Authorization':access_token})
+    res = requests.get(url=url+"update",headers=headers)
+    con = res.content.decode('utf-8')
+    return json.loads(con)
+
+def add_vm(access_token=None,data=None):
+    headers.update({'Authorization':access_token})
+    res = requests.post(url=url+"update",headers=headers,data=json.dumps(data))
+    con = res.content.decode('utf-8')
+    return json.loads(con)
+
+
+def updates(access_token=None,data=None):
+    headers.update({'Authorization':access_token})
+    res = requests.put(url=url+"update",headers=headers,data=json.dumps(data))
+    con = res.content.decode('utf-8')
+    # print(con)
+    return json.loads(con)
+
 if __name__=="__main__":
-    print(login("aab@aa.com","welcome123"))
+    # print(login("aab@aa.com","welcome123"))
+    res_u = updates("Q0Lvyw$oPqXPoXvxRd#C",data={"vm":"wpva","stop_vm":"Y"})
+    print(res_u)

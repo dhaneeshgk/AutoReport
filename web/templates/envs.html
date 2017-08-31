@@ -63,10 +63,10 @@
                 position:absolute;
                 bottom:1%;
                 right:1%;
-                border-radius: 35px;
+                border-radius: 55px;
                 border: 2px solid #73AD21;
-                width: 500px;
-                height: 70px;
+                width: 600px;
+                height: 50px;
                 text-align: center;
             }
         </style>
@@ -109,11 +109,16 @@
                             <label name="name" value="{{ env.name }}">{{ env.name }}</label>
                         </td>
                         <td name="url" value="{{ env.url  }}">{{ env.url }}</td>
-                        <td name="status" value="{{ env.status  }}">{{ env.status }}</td>
+                            <td name="status" value="{{ env.status }}">{{ env.status }}</td>
                         <td>
                             <form action="{{url_for('envs')}}" method="POST">
-                                <button name="{{ env.status }}" value="{{ env.name }}"
-                                type="submit">{{ env.status }}</button>
+                                {% if env.status == "UP" %}
+                                    <button name="down" value="{{ env.name }}"
+                                    type="submit">DOWN</button>
+                                {% elif env.status == "DOWN" %}
+                                    <button name="up" value="{{ env.name }}"
+                                    type="submit">UP</button>
+                                {% endif %}
                                 <button name="{{ env.name  }}" value="edit"
                                 type="submit" disabled="true">EDIT</button>
                                 <button name="{{ env.name }}" value="delete"

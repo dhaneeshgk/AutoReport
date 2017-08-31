@@ -1,7 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
-from config import db_path
+# from config import db_path
 
+db_path = 'postgresql://postgres:Vidya@11@localhost:5433/users'
 db_connect  = create_engine(db_path)
 
 
@@ -23,7 +24,7 @@ def get_row(table_name="users",where_=None,which_=None):
         conn = db_connect.connect()
 
         if which_:
-            if which_=="all":
+            if which_ == "all":
                 to_set = '*'
             else:
                 da_f = "{0} = '{1}'"
@@ -52,6 +53,7 @@ def get_row(table_name="users",where_=None,which_=None):
 
 def update_row(table_name="users",where_=None,which_=None):
     try:
+
         conn = db_connect.connect()
 
         if which_:
@@ -68,9 +70,15 @@ def update_row(table_name="users",where_=None,which_=None):
                 to_point = da_f.format(i,where_[i]) + "," + to_point
             to_point = to_point+da_f.format(list(where_.keys())[-1],where_[list(where_.keys())[-1]])
 
-
-        query = conn.execute("UPDATE {table_name} SET {to_set} WHERE {to_point}".format(table_name=table_name,to_set=to_set,to_point=to_point))
-        return {"status":True,"keys":query.keys(),"values":None}
+        # print("to_set",to_set)
+        # print("to_point",to_point)
+        # print("UPDATE {table_name} SET {to_set} WHERE {to_point}".format(table_name=table_name,to_set=to_set,to_point=to_point))
+        if where_:
+            query = conn.execute("UPDATE {table_name} SET {to_set} WHERE {to_point}".format(table_name=table_name,to_set=to_set,to_point=to_point))
+            return {"status":True,"keys":query.keys(),"values":None}
+        else:
+            query = conn.execute("UPDATE {table_name} SET {to_set} ".format(table_name=table_name,to_set=to_set,to_point=to_point))
+            return {"status":True,"keys":query.keys(),"values":None}
     except Exception as e:
         return {"status":False,"error":str(e)}
 
@@ -107,9 +115,10 @@ def insert_row(table_name="users",where_=None,which_=None):
 
 
         if where_:
-            query = conn.execute("INSERT INTO {table_name} VALUES {to_set} WHERE {to_point}".format(table_name=table_name,to_set=to_set,to_point=to_point))
+            query = conn.execute("INSERT INTO {table_name} VALUES {to_set} WHERE {to_point}".format(table_name=table_name,to_set=to_set))
             return {"status":True,"keys":query.keys(),"values":{}}
         else:
+            # print("INSERT INTO {table_name} VALUES ({to_set})".format(table_name=table_name,to_set=to_set))
             query = conn.execute("INSERT INTO {table_name} VALUES ({to_set})".format(table_name=table_name,to_set=to_set))
             return {"status":True,"keys":query.keys(),"values":{}}
 
@@ -131,3 +140,29 @@ def delete_row(table_name="users",where_=None,which_=None):
         return {"status":True,"keys":query.keys(),"values":{}}
     except Exception as e:
         return {"status":False,"error":str(e)+" from dbs"}
+
+
+def create_keycode():
+
+    try:
+        conn = db_connect.connect()
+        # query_c = conn.execute("ALTER TABLE update_database add column start_vm char(1)")
+        # print()
+        query = conn.execute("UPDATE update_database SET stop_vm='N'")
+    except Exception as e:
+        print(e)
+        pass
+
+
+def admin_create_user():
+    try:
+        conn = db_connect.connect()
+        query = conn.execute("INSERT INTO users VALUES ('dhaneesh.gk@gmail.com','welcome123','nnnnnnnnnnnnnnnnnnnn','OWNER','a','Dhaneesh G K')")
+        query = conn.execute("INSERT INTO users VALUES ('admin@autoreport.com','welcome','nnnnnnnnnnnnnnnnnnnn','OWNER','a','admin')")
+        return {"status":True,"remarks":"success"}
+    except Exception as e:
+        return {"status":False,"remarks":"error {0}".format(str(e))}
+
+
+if __name__=="__main__":
+    create_keycode()
