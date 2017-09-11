@@ -3,6 +3,7 @@ from api_requests import apis
 from werkzeug import secure_filename
 import os
 import config
+from imp import reload
 
 app = Flask(__name__)
 
