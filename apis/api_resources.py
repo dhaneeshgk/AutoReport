@@ -261,8 +261,10 @@ class manage_vms(Resource):
                         # print(d_s)
                         if d_s["status"]:
                             status.append({"status":True,"remarks":"virtual machine '{0}' added successfully".format(i['vm'])})
-                            data = {"vm":i["vm"],"schedules":"N","envs":"N","test_suites":"N","vms":"N","stop_vm":"N"}
+                            data = {"vm":i["vm"],"schedules":"N","envs":"N","test_suites":"N","vms":"N","stop_vm":"N","start_vm":"N"}
+                            # print("added vm to update_database")
                             i_s = dbs.insert_row(table_name="update_database",which_=data)
+                            # print("i_s",i_s)
                             u_s = dbs.update_row(table_name="update_database",which_={"vms":"Y"})
                             # print(u_s)
                         else:
