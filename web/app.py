@@ -212,13 +212,14 @@ def schedules():
     envs = [{'name':i['name']} for i in envs]
     vms = apis.get_vms(access_token=request.cookies['auto_report_wp'])['vms']
     vms = [{'name':i['vm']} for i in vms if i['status']=='N']
-    print(envs)
+    # print(envs)
     test_suites = apis.get_test_suites(
     access_token=request.cookies['auto_report_wp'])['test_suites']
     test_suites = [{'name':i['name'].split(".")[0]} for i in test_suites]
     # print(test_suites)
+    reload(config)
     return render_template("schedules.html",envs=envs,vms=vms,
-    schedules=schedules['tasks'],test_suites=test_suites,fill_i=fill_i)
+    schedules=schedules['tasks'],test_suites=test_suites,fill_i=fill_i,config=config.config)
 
 
 @app.route("/users",methods=['GET','POST'])
@@ -320,7 +321,7 @@ def test_suites():
 
     test_suites = apis.get_test_suites(
     access_token=request.cookies['auto_report_wp'])['test_suites']
-    return render_template("test suites.html",
+    return render_template("test_suites.html",
     test_suites=test_suites,config=config.config)
 
 

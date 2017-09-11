@@ -574,7 +574,7 @@ class update_info(Resource):
 
         res_v = validate_headers(request.headers)
         if res_v["status"]:
-            d_s = dbs.get_row(table_name="update_database",which_="all",where_={"status":"Y"})
+            d_s = dbs.get_row(table_name="update_database",which_="all")
             if d_s["status"]:
                 keycodes = {list(i)[0]:list(i)[3] for i in d_s["values"]}
                 return jsonify(keycodes)
@@ -862,6 +862,58 @@ class docs(Resource):
         else:
             return jsonify(res_v)
 
+
+
+
+class LOGS(db.Model):
+    __tablename__ = "logs"
+    id = db.Column(db.String(20),primary_key=True)
+    date = db.Column(db.String(10))
+    time = db.Column(db.String(12))
+    to = db.Column(db.String(100))
+    description = db.Column(db.String(500))
+
+    def __init__(self,id,date,time,to,description):
+        self.id = id
+        self.date = date
+        self.time = time
+        self.to  = to
+        self.description = description
+
+
+class Logs(Resource):
+
+    def get(self):
+        res_v = validate_headers(request.headers)
+        if res_v["status"]:
+            d_s = dbs.get_table("logs")
+            if d_s["status"]:
+                keys = d_s["keys"]
+                values = d_s["values"]
+                return jsonify([{keys[i.index(j)]:j for j in i} for i in values])
+            else:
+                return jsonify(d_s)
+        else:
+            return jsonify(res_v)
+
+    def post(self):
+        data_o = requests.get_json()
+        data_i = data_o.copy()
+        res_v = validate_headers(request.headers)
+        if res_v["status"]:
+            data.update({'id':"".join(str(t.timestamp()).split("."))})
+            d_s = dbs.insert_row("logs",which_=data)
+        else:
+            return jsonify(res_v)
+
+class get_user(Resource):
+
+    def get(self):
+        res_v = validate_headers(request.headers)
+        if res_v["status"]:
+            return jsonify({i:res_v[i] for i in res_v if i in ["email","name"]})
+        else:
+            return jsonify(res_v)
 
 class setup(Resource):
     def get(self):

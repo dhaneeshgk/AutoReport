@@ -21,13 +21,20 @@ def validate_headers(headers,validate_token=True,validate_content_type=True):
                 q_c = list(d_s["values"])
                 if q_c:
                     details = list(q_c[0])
-                    return {"status":True,"email":details[0],"access_token":details[1]}
+                    return {"status":True,"name":details[0],"email":details[1],"access_token":details[1]}
                 else:
                     return {"status":False,"remarks":"Invalid access token"}
             else:
                 return {"status":False,"remarks":"please provide access token"}
     except Exception as e:
         return {"status":False,"remarks":str(e)}
+
+
+def add_notification(to="all",notify=None):
+    data = {"descripton":notify,"to":to}
+    data.update({'id':"".join(str(t.timestamp()).split("."))})
+    dbs.insert_row("logs",which_=data)
+
 
 def drop_user_creation_email(data):
 

@@ -166,7 +166,7 @@
                                 {{ schedule.environment }}
                             </td>
                             <td name="test_suite" value="{{ schedule.test_suite }}">
-                                <a href="http://127.0.0.1:5300/docs?file={{ schedule.test_suite }}.xlsx" >{{ schedule.test_suite }}</a>
+                                <a href="{{ config.download_url }}docs?file={{ schedule.test_suite }}.xlsx" >{{ schedule.test_suite }}</a>
                             </td>
                             <td name="schedule_date" value="{{ schedule.schedule_date }}">
                                 {{ schedule.schedule_date }}
