@@ -576,7 +576,7 @@ class update_info(Resource):
         if res_v["status"]:
             d_s = dbs.get_table(table_name="update_database")
             if d_s["status"]:
-                keycodes = [{d_s["keys"][i.index(j)]:j for j in i}for for i in d_s["values"]]
+                keycodes = [{d_s["keys"][i.index(j)]:j for j in i} for i in d_s["values"]]
                 return jsonify(keycodes)
             return jsonify(d_s)
         else:
