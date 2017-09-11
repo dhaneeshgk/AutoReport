@@ -574,7 +574,7 @@ class update_info(Resource):
 
         res_v = validate_headers(request.headers)
         if res_v["status"]:
-            d_s = dbs.get_row(table_name="update_database",which_="all")
+            d_s = dbs.get_table(table_name="update_database",which_="all")
             if d_s["status"]:
                 keycodes = {list(i)[0]:list(i)[3] for i in d_s["values"]}
                 return jsonify(keycodes)
