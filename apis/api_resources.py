@@ -265,7 +265,7 @@ class manage_vms(Resource):
                             # print("added vm to update_database")
                             i_s = dbs.insert_row(table_name="update_database",which_=data)
                             # print("i_s",i_s)
-                            u_s = dbs.update_row(table_name="update_database",which_={"vms":"Y"})
+                            u_s = dbs.update_row(table_name="update_database",which_={"vms":"Y"},where_={"vm":"all"})
                             # print(u_s)
                         else:
                             status.append({"status":False,"remarks":"virtual machine '{0}' not added".format(i['vm'])})
@@ -411,6 +411,9 @@ class schedule_vms(Resource):
                             vs_which = {"status":"A"}
                             vs_d_s = dbs.update_row(table_name="vms",where_=vs_where,which_=vs_which)
                             if vs_d_s["status"]:
+
+                                u_s = dbs.update_row(table_name="update_database",which_={"schedules":"Y"},where_={"vm":"all"})
+
                                 return jsonify({"status":True,"remarks":"Task '{0}' has been scheduled successfully".format(data["task"])})
                             else:
                                 return jsonify({"status":Flase,"remarks":"schedule '{0}' added successfully but there was problem updating vm status ".format(data["task"])})
@@ -497,6 +500,7 @@ class schedule_vms(Resource):
                                 vs_which = {"status":"N"}
                                 vs_d_s = dbs.update_row(table_name="vms",where_=vs_where,which_=vs_which)
 
+                        u_s = dbs.update_row(table_name="update_database",which_={"schedules":"Y"},where_={"vm":"all"})
                         return jsonify({"status":True,"remarks":"task '{0}' as been updated successfully".format(data["task"])})
                     else:
                         return jsonify({"status":False,"remarks":"task '{0}' is not been updated successfully".format(data["task"])})
@@ -534,6 +538,7 @@ class schedule_vms(Resource):
                             vs_which = {"status":"N"}
                             vs_d_s = dbs.update_row(table_name="vms",where_=vs_where,which_=vs_which)
                             if vs_d_s["status"]:
+                                u_s = dbs.update_row(table_name="update_database",which_={"schedules":"Y"},where_={"vm":"all"})
                                 return jsonify({"status":False,"remarks":"Task '{0}' as been deleted successfully".format(data["task"])})
                             else:
                                 return jsonify({"status":False,"remarks":"Task '{0}' as not been deleted successfully".format(data["task"])})
@@ -679,7 +684,7 @@ class update_server_info(Resource):
                 d_s = dbs.insert_row(table_name="update_server_info",which_=data)
                 if d_s["status"]:
                     # print("pass")
-                    u_s = dbs.update_row(table_name="update_database",which_={"envs":"Y"})
+                    u_s = dbs.update_row(table_name="update_database",which_={"envs":"Y"},where_={"vm":"all"})
                     return jsonify({"status":True,"remarks":"Environment '{0}' is added successfully".format(data["environment"])})
                 else:
                     # print("fail")
@@ -703,7 +708,7 @@ class update_server_info(Resource):
                     which_.update({"status":data["status"]})
                 d_s = dbs.update_row(table_name="update_server_info",where_=where_,which_=which_)
                 if d_s["status"]:
-                    u_s = dbs.update_row(table_name="update_database",which_={"envs":"Y"})
+                    u_s = dbs.update_row(table_name="update_database",which_={"envs":"Y"},where_={"vm":"all"})
                     return jsonify({"status":True,"remarks":"Environment '{0}' status is updated successfully".format(data["environment"])})
                 else:
                     return jsonify(d_s.update({"remarks":"Environment '{0}' status is not updated successfully".format(data["environment"])}))
@@ -718,7 +723,7 @@ class update_server_info(Resource):
             if data:
                 d_s = dbs.delete_row(table_name="update_server_info",where_={"environment":data["environment"]})
                 if d_s["status"]:
-                    u_s = dbs.update_row(table_name="update_database",which_={"envs":"Y"})
+                    u_s = dbs.update_row(table_name="update_database",which_={"envs":"Y"},where_={"vm":"all"})
                     return jsonify({"status":True,"remarks":"Environment '{0}' status is deleted successfully".format(data["environment"])})
                 else:
                     return jsonify(d_s.update({"remarks":"Environment '{0}' status is not deleted successfully".format(data["environment"])}))
@@ -763,7 +768,8 @@ class test_suites(Resource):
                 if not data["name"] in test_suites_p:
                     d_s = dbs.insert_row(table_name="test_suites",which_=data)
                     if d_s["status"]:
-                        u_s = dbs.update_row(table_name="update_database",which_={"test_suites":"Y"})
+                        u_s = dbs.update_row(table_name="update_database",which_={"test_suites":"Y"},where_={"vm":"all"})
+
                         return jsonify({"status":True,"remarks":"Test Suite '{0}' is added successfully".format(data["name"])})
                     else:
                         d_s.update({"status":False,"remarks":"Test Suite '{0}' is not added successfully".format(data["name"])})
@@ -790,7 +796,7 @@ class test_suites(Resource):
                     which_.update({"status":data["status"]})
                 d_s = dbs.insert_row(table_name="update_server_info",where_=where_,which_=which_)
                 if d_s["status"]:
-                    u_s = dbs.update_row(table_name="update_database",which_={"test_suites":"Y"})
+                    u_s = dbs.update_row(table_name="update_database",which_={"test_suites":"Y"},where_={"vm":"all"})
                     return jsonify({"status":True,"remarks":"Environment '{0}' status is updated successfully".format(data["environment"])})
                 else:
                     return jsonify(d_s.update({"remarks":"Environment '{0}' status is not updated successfully".format(data["environment"])}))
@@ -809,7 +815,7 @@ class test_suites(Resource):
                     if i in test_suites_p:
                         d_s = dbs.delete_row(table_name="test_suites",where_={'name':i})
                         if d_s["status"]:
-                            u_s = dbs.update_row(table_name="update_database",which_={"test_suites":"Y"})
+                            u_s = dbs.update_row(table_name="update_database",which_={"test_suites":"Y"},where_={"vm":"all"})
                             return jsonify({"status":True,"remarks":"Test Suite '{0}' is deleted successfully".format(i)})
                         else:
                             return jsonify(d_s.update({"remarks":"Test Suite '{0}' is not deleted successfully".format(i)}))
