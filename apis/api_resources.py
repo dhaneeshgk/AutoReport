@@ -989,6 +989,12 @@ class tasks_on_run(Resource):
             a_data = request.get_json()
             data = {i:a_data[i] for i in a_data if i!='vm'}
             d_s.update_row(table_name="run",which_=data,where_={"vm":a_data["vm"]})
+            if d_s["status"]:
+                d_s.update({"remarks":"Task on run as been updated successfully"})
+                return jsonify(d_s)
+            else:
+                d_s.update({"remarks":"Task on run was been updated successfully"})
+                return jsonify(d_s)
         else:
             return jsonify(res_v)
 
@@ -1013,4 +1019,3 @@ api.add_resource(tasks_on_run,'/tasks_on_run')
 
 if __name__ == '__main__':
     db.create_all()
-    pass
