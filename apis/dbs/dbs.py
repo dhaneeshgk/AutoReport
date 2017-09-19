@@ -9,6 +9,7 @@ db_connect  = create_engine(db_path)
 def get_table(table_name="users"):
     conn = db_connect.connect()
     query = conn.execute("select * from {table_name}".format(table_name=table_name))
+    # print(query.cursor.fetchall())
     return {"status":True,"keys":query.keys(),"values":query.cursor.fetchall()}
 
 def update_access_token(table_name="users",**data):
@@ -39,6 +40,7 @@ def get_row(table_name="users",where_=None,which_=None):
                 to_point = da_f.format(i,where_[i]) + "," + to_point
 
             to_point = to_point+da_f.format(list(where_.keys())[-1],where_[list(where_.keys())[-1]])
+
 
         if which_=="all":
             query = conn.execute("SELECT * FROM {table_name} WHERE {to_point}".format(table_name=table_name,to_set=to_set,to_point=to_point))
@@ -112,7 +114,6 @@ def insert_row(table_name="users",where_=None,which_=None):
             for i in list(where_.keys())[:-1]:
                 to_point = da_f.format(i,where_[i]) + "," + to_point
             to_point = to_point+da_f.format(list(where_.keys())[-1],where_[list(where_.keys())[-1]])
-
 
         if where_:
             query = conn.execute("INSERT INTO {table_name} VALUES {to_set} WHERE {to_point}".format(table_name=table_name,to_set=to_set))

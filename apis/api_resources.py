@@ -261,7 +261,7 @@ class manage_vms(Resource):
                         # print(d_s)
                         if d_s["status"]:
                             status.append({"status":True,"remarks":"virtual machine '{0}' added successfully".format(i['vm'])})
-                            data = {"vm":i["vm"],"schedules":"N","envs":"N","test_suites":"N","vms":"N","stop_vm":"N","start_vm":"N"}
+                            data = {"vm":i["vm"],"schedules":"N","envs":"N","test_suites":"N","vms":"N","stop_vm":"N","start_vm":"N","task":"None"}
                             # print("added vm to update_database")
                             i_s = dbs.insert_row(table_name="update_database",which_=data)
                             # print("i_s",i_s)
@@ -373,15 +373,15 @@ class schedule_vms(Resource):
                         tasks = {'tasks':{}}
                     else:
                         row = d_s["values"]
-                        tasks = {'tasks':[{d_s["keys"][row.index(i)]:i for i in row}for row in d_s["values"]]}
-                    # tasks ={}
+                        tasks = {'tasks':[{i:row[d_s["keys"].index(i)] for i in d_s["keys"]}for row in d_s["values"]]}
                     return jsonify(tasks)
                 else:
                     return jsonify(d_s)
             else:
+                t = datetime.today()
                 d_s = dbs.get_table(table_name="scheduled_tasks")
                 if d_s["status"]:
-                    tasks = {'tasks':[{d_s["keys"][row.index(i)]:i for i in row}for row in d_s["values"]]}
+                    tasks = {'tasks':[{i:row[d_s["keys"].index(i)] for i in d_s["keys"]} for row in d_s["values"]]}
                     return jsonify(tasks)
                 else:
                     return jsonify(d_s)
@@ -397,7 +397,8 @@ class schedule_vms(Resource):
                 if not data["task"] in tasks:
                     t = datetime.today()
                     data.update({"id":"".join(str(t.timestamp()).split(".")),"date":str(t.date()),
-                    "time":str(t.time()).split(".")[0],"status":"W"})
+                    "time":str(t.time()).split(".")[0],"status":"W","scheduler":res_v["email"]})
+
                     d_s = dbs.insert_row(table_name="scheduled_tasks",which_=data)
                     u_s = dbs.update_row(table_name="update_database",which_={"schedules":"Y"})
                     if d_s["status"]:
@@ -557,14 +558,15 @@ class schedule_vms(Resource):
 class Update_Details(db.Model):
     __tablename__ = "update_database"
     vm = db.Column(db.String(50), primary_key=True)
-    schedules = db.Column(db.String(1), primary_key=True)
-    envs = db.Column(db.String(1), primary_key=True)
-    test_suites = db.Column(db.String(1), primary_key=True)
-    vms = db.Column(db.String(1), primary_key=True)
-    stop_vm = db.Column(db.String(1), primary_key=True)
-    start_vm = db.Column(db.String(1), primary_key=True)
+    schedules = db.Column(db.String(1))
+    envs = db.Column(db.String(1))
+    test_suites = db.Column(db.String(1))
+    vms = db.Column(db.String(1))
+    stop_vm = db.Column(db.String(1))
+    start_vm = db.Column(db.String(1))
+    task = db.Column(db.String(100),)
 
-    def __init__(self,vm,schedule,env,test_suite,vms,stop_vm,start_vm):
+    def __init__(self,vm,schedule,env,test_suite,vms,stop_vm,start_vm,task):
         self.vm = vm
         self.schedule = schedule
         self.env = env
@@ -572,6 +574,7 @@ class Update_Details(db.Model):
         self.vms = vms
         self.stop_vm = stop_vm
         self.start_vm = start_vm
+        self.task = task
 
 
 
@@ -889,7 +892,7 @@ class LOGS(db.Model):
         self.description = description
 
 
-class Logs(Resource):
+class logs(Resource):
 
     def get(self):
         res_v = validate_headers(request.headers)
@@ -932,6 +935,66 @@ class setup(Resource):
             return jsonify({"status":False,"remarks":"error {0}".format(str(e))})
 
 
+
+class Task_Run(db.Model):
+    __tablename__ = "run"
+    id = db.Column(db.String(16),primary_key=True)
+    date = db.Column(db.String(10))
+    time = db.Column(db.String(15))
+    task = db.Column(db.String(120),unique=True)
+    description = db.Column(db.String(200))
+    vm = db.Column(db.String(20))
+    environment = db.Column(db.String(10))
+    test_suite = db.Column(db.String(50))
+    schedule_date = db.Column(db.String(10))
+    schedule_time = db.Column(db.String(10))
+    status = db.Column(db.String(1))
+    stop = db.Column(db.String(1))
+    quit = db.Column(db.String(1))
+
+    def __init__(self,id,date,time,task,descripton,vm,status,environment,stop,quit):
+        self.id = id
+        self.date = date
+        self.time = time
+        self.task = task
+        self.description = description
+        self.vm = vm
+        self.environment = environment
+        self.test_suite = test_suite
+        self.schedule_date = schdule_date
+        self.schedule_time = schedule_time
+        self.status = status
+        self.stop = stop
+        self.quit = quit
+
+
+class tasks_on_run(Resource):
+
+    def get(self):
+        res_v = validate_headers(request.headers)
+        if res_v["status"]:
+            if "?vm" in request.url:
+                vm = request.url.split("?vm=")[-1].replace("%20"," ")
+                d_s = dbs.get_row(table_name="run",where_={"vm":vm},which_="all")
+                if d_s["status"]:
+                    keycodes = [{j:i[d_s['keys'].index(j)] for j in d_s['keys']} for i in d_s['values']]
+                    return jsonify(keycodes)
+            return jsonify(d_s)
+        else:
+            return jsonify(res_v)
+
+    def put(self):
+        res_v = validate_headers(request.headers)
+        if res_v["status"]:
+            a_data = request.get_json()
+            data = {i:a_data[i] for i in a_data if i!='vm'}
+            d_s.update_row(table_name="run",which_=data,where_={"vm":a_data["vm"]})
+        else:
+            return jsonify(res_v)
+
+
+api.add_resource(get_user,'/get_user')
+api.add_resource(logs,'/logs')
 api.add_resource(setup,'/setup')
 api.add_resource(manage_users, '/manage_users')
 api.add_resource(user_login,'/user_login')
@@ -943,6 +1006,7 @@ api.add_resource(update_info,'/update')
 api.add_resource(update_server_info,'/envs')
 api.add_resource(test_suites,'/test_suites')
 api.add_resource(docs,'/docs')
+api.add_resource(tasks_on_run,'/tasks_on_run')
 
 
 

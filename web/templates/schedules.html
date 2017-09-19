@@ -134,6 +134,7 @@
                     <th>Vm</th>
                     <th>Env</th>
                     <th>Test_Suite</th>
+                    <th>Scheduler</th>
                     <th>Schedule_Date</th>
                     <th>Schedule_Time</th>
                     <th>Status</th>
@@ -167,6 +168,9 @@
                             </td>
                             <td name="test_suite" value="{{ schedule.test_suite }}">
                                 <a href="{{ config.download_url }}docs?file={{ schedule.test_suite }}.xlsx" >{{ schedule.test_suite }}</a>
+                            </td>
+                            <td name="scheduler" value="{{ schedule.scheduler }}">
+                                {{ schedule.scheduler }}
                             </td>
                             <td name="schedule_date" value="{{ schedule.schedule_date }}">
                                 {{ schedule.schedule_date }}
