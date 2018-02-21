@@ -331,6 +331,7 @@ class Manage_Scheduled_Tasks(db.Model):
     test_suite = db.Column(db.String(50))
     schedule_date = db.Column(db.String(10))
     schedule_time = db.Column(db.String(10))
+    scheduler = db.Column(db.String(200))
     status = db.Column(db.String(1))
 
     def __init__(self,id,date,time,task,descripton,vm,status,environment):
@@ -344,6 +345,7 @@ class Manage_Scheduled_Tasks(db.Model):
         self.test_suite = test_suite
         self.schedule_date = schdule_date
         self.schedule_time = schedule_time
+        self.scheduler = db.Column(db.String(200))
         self.status = status
 
 
@@ -948,6 +950,7 @@ class Task_Run(db.Model):
     test_suite = db.Column(db.String(50))
     schedule_date = db.Column(db.String(10))
     schedule_time = db.Column(db.String(10))
+    scheduler = db.Column(db.String(200))
     status = db.Column(db.String(1))
     stop = db.Column(db.String(1))
     quit = db.Column(db.String(1))
@@ -963,6 +966,7 @@ class Task_Run(db.Model):
         self.test_suite = test_suite
         self.schedule_date = schdule_date
         self.schedule_time = schedule_time
+        self.scheduler = db.Column(db.String(200))
         self.status = status
         self.stop = stop
         self.quit = quit
@@ -971,32 +975,149 @@ class Task_Run(db.Model):
 class tasks_on_run(Resource):
 
     def get(self):
-        res_v = validate_headers(request.headers)
-        if res_v["status"]:
-            if "?vm" in request.url:
-                vm = request.url.split("?vm=")[-1].replace("%20"," ")
-                d_s = dbs.get_row(table_name="run",where_={"vm":vm},which_="all")
-                if d_s["status"]:
-                    keycodes = [{j:i[d_s['keys'].index(j)] for j in d_s['keys']} for i in d_s['values']]
+
+        if "?vm" in request.url:
+            vm = request.url.split("?vm=")[-1].replace("%20"," ")
+            d_s = dbs.get_row(table_name="run",where_={"vm":vm},which_="all")
+            if d_s["status"]:
+                keycodes = [{j:i[d_s['keys'].index(j)] for j in d_s['keys']} for i in d_s['values']]
+                if not keycodes:
+                    return jsonify({})
+                else:
+                    return keycodes[0]
+
+        elif "&status" in request.url:
+            data = {i.split("=")[0]:i.split("=")[1] for i in request.url.split("?")[1].split("&")}
+            d_s = dbs.get_row(table_name="run",where_=data,which_="all")
+            if d_s["status"]:
+                keycodes = [{j:i[d_s['keys'].index(j)] for j in d_s['keys']} for i in d_s['values']]
+                if not keycodes:
+                    return jsonify({})
+                else:
                     return jsonify(keycodes)
-            return jsonify(d_s)
-        else:
-            return jsonify(res_v)
+
+        elif "?environment" in request.url:
+            env = request.url.split("?env=")[-1].replace("%20"," ")
+            d_s = dbs.get_row(table_name="run",where_={"environment":env},which_="all")
+            if d_s["status"]:
+                keycodes = [{j:i[d_s['keys'].index(j)] for j in d_s['keys']} for i in d_s['values']]
+                if not keycodes:
+                    return jsonify({})
+                else:
+                    return jsonify(keycodes)
+        elif not "?" in request.url:
+            d_s = dbs.get_table(table_name="run")
+
 
     def put(self):
+        # res_v = validate_headers(request.headers)
+        # if res_v["status"]:
+        a_data = request.get_json()
+        # print(a_data)
+        data = {i:a_data[i] for i in a_data if i!='vm'}
+        d_s = dbs.update_row(table_name="run",which_=data,where_={"vm":a_data["vm"]})
+
+        if d_s["status"]:
+            return jsonify({"status":True,"remarks":"Task on run as been updated successfully"})
+        else:
+            return jsonify({"status":True,"remarks":"Task on run was not updated"})
+        # else:
+        #     return jsonify(res_v)
+
+    def delete(self):
         res_v = validate_headers(request.headers)
         if res_v["status"]:
             a_data = request.get_json()
+            # print(a_data)
             data = {i:a_data[i] for i in a_data if i!='vm'}
-            d_s.update_row(table_name="run",which_=data,where_={"vm":a_data["vm"]})
+            d_s = dbs.delete_row(table_name="run",where_={"task":a_data["task"]})
+
             if d_s["status"]:
-                d_s.update({"remarks":"Task on run as been updated successfully"})
-                return jsonify(d_s)
+                return jsonify({"status":True,"remarks":"Task on run as been updated successfully"})
             else:
-                d_s.update({"remarks":"Task on run was been updated successfully"})
-                return jsonify(d_s)
+                return jsonify({"status":True,"remarks":"Task on run was not updated"})
+
+
+class Tasks_Completed(db.Model):
+    __tablename__ = "tasks_completed"
+    id = db.Column(db.String(16),primary_key=True)
+    date = db.Column(db.String(10))
+    time = db.Column(db.String(15))
+    task = db.Column(db.String(120),unique=True)
+    description = db.Column(db.String(200))
+    vm = db.Column(db.String(20))
+    environment = db.Column(db.String(10))
+    test_suite = db.Column(db.String(50))
+    schedule_date = db.Column(db.String(10))
+    schedule_time = db.Column(db.String(10))
+    scheduler = db.Column(db.String(200))
+
+    def __init__(self,id,date,time,task,descripton,vm,environment,scheduler):
+        self.id = id
+        self.date = date
+        self.time = time
+        self.task = task
+        self.description = description
+        self.vm = vm
+        self.environment = environment
+        self.test_suite = test_suite
+        self.schedule_date = schdule_date
+        self.schedule_time = schedule_time
+        self.scheduler = scheduler
+
+
+class tasks_completed(Resource):
+
+    def get(self):
+
+        if "?vm" in request.url:
+            vm = request.url.split("?vm=")[-1].replace("%20"," ")
+            d_s = dbs.get_row(table_name="run",where_={"vm":vm},which_="all")
+            if d_s["status"]:
+                keycodes = [{j:i[d_s['keys'].index(j)] for j in d_s['keys']} for i in d_s['values']]
+                if not keycodes:
+                    return jsonify({})
+                else:
+                    return keycodes[0]
+
+        elif "&status" in request.url:
+            data = {i.split("=")[0]:i.split("=")[1] for i in request.url.split("?")[1].split("&")}
+            d_s = dbs.get_row(table_name="run",where_=data,which_="all")
+            if d_s["status"]:
+                keycodes = [{j:i[d_s['keys'].index(j)] for j in d_s['keys']} for i in d_s['values']]
+                if not keycodes:
+                    return jsonify({})
+                else:
+                    return jsonify(keycodes)
+
+        elif "?environment" in request.url:
+            env = request.url.split("?env=")[-1].replace("%20"," ")
+            d_s = dbs.get_row(table_name="run",where_={"environment":env},which_="all")
+            if d_s["status"]:
+                keycodes = [{j:i[d_s['keys'].index(j)] for j in d_s['keys']} for i in d_s['values']]
+                if not keycodes:
+                    return jsonify({})
+                else:
+                    return jsonify(keycodes)
+        elif not "?" in request.url:
+            d_s = dbs.get_table(table_name="tasks_completed")
+
+
+    def put(self):
+        # res_v = validate_headers(request.headers)
+        # if res_v["status"]:
+        a_data = request.get_json()
+        # print(a_data)
+        data = {i:a_data[i] for i in a_data if i!='vm'}
+        d_s = dbs.update_row(table_name="run",which_=data,where_={"vm":a_data["vm"]})
+
+        if d_s["status"]:
+            return jsonify({"status":True,"remarks":"Task on run as been updated successfully"})
         else:
-            return jsonify(res_v)
+            return jsonify({"status":True,"remarks":"Task on run was not updated"})
+        # else:
+        #     return jsonify(res_v)
+
 
 
 api.add_resource(get_user,'/get_user')
@@ -1013,7 +1134,7 @@ api.add_resource(update_server_info,'/envs')
 api.add_resource(test_suites,'/test_suites')
 api.add_resource(docs,'/docs')
 api.add_resource(tasks_on_run,'/tasks_on_run')
-
+api.add_resource(tasks_completed,'/tasks_completed')
 
 
 

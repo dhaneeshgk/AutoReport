@@ -20,9 +20,10 @@ def update_access_token(table_name="users",**data):
     except Exception as e:
         return {"status":False,"error":str(e)}
 
-def get_row(table_name="users",where_=None,which_=None):
+def get_row(table_name="users",where_=None,which_=None,for_all="all"):
     try:
         conn = db_connect.connect()
+        fors = {"all":" and ","any":" or "}
 
         if which_:
             if which_ == "all":
@@ -37,11 +38,14 @@ def get_row(table_name="users",where_=None,which_=None):
             da_f = "{0} = '{1}'"
             to_point = ""
             for i in list(where_.keys())[:-1]:
-                to_point = da_f.format(i,where_[i]) + "," + to_point
+                to_point = da_f.format(i,where_[i]) + fors[for_all] + to_point
 
-            to_point = to_point+da_f.format(list(where_.keys())[-1],where_[list(where_.keys())[-1]])
+            # if to_point:
+            #     to_point = to_point+ fors[for_all] + da_f.format(list(where_.keys())[-1],where_[list(where_.keys())[-1]])
+            # else:
+            to_point = to_point + da_f.format(list(where_.keys())[-1],where_[list(where_.keys())[-1]])
 
-
+        # print("SELECT * FROM {table_name} WHERE {to_point}".format(table_name=table_name,to_set=to_set,to_point=to_point))
         if which_=="all":
             query = conn.execute("SELECT * FROM {table_name} WHERE {to_point}".format(table_name=table_name,to_set=to_set,to_point=to_point))
             return {"status":True,"keys":query.keys(),"values":query.cursor.fetchall()}
@@ -158,7 +162,7 @@ def create_keycode():
 def admin_create_user():
     try:
         conn = db_connect.connect()
-        query = conn.execute("INSERT INTO users VALUES ('Dhaneesh G K','dhaneesh.gk@gmail.com','welcome123','nnnnnnnnnnnnnnnnnnnn','OWNER','a')")
+        # query = conn.execute("INSERT INTO users VALUES ('Dhaneesh G K','dhaneesh.gk@gmail.com','welcome123','nnnnnnnnnnnnnnnnnnnn','OWNER','a')")
         query = conn.execute("INSERT INTO users VALUES ('admin','admin@autoreport.com','welcome','nnnnnnnnnnnnnnnnnnnn','OWNER','a')")
         return {"status":True,"remarks":"success"}
     except Exception as e:

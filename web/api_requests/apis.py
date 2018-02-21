@@ -201,6 +201,29 @@ def updates(access_token=None,data=None):
     # print(con)
     return json.loads(con)
 
+
+def get_task(vm=None,env=None,status=None):
+
+#     res = requests.get(url=url+"tasks_on_run?vm={0}".format(getpass.getuser()))
+    if vm:
+        res = requests.get(url=url+"tasks_on_run?vm={0}".format(vm))
+    elif env and not status:
+        res = requests.get(url=url+"tasks_on_run?environment={0}".format(env))
+    elif env and status:
+        res = requests.get(url=url+"tasks_on_run?environment={0}&status={1}".format(env,status))
+    else:
+        res = requests.get(url=url+"tasks_on_run")
+    con = res.content.decode('utf-8')
+    return json.loads(con)
+
+def update_task(data=None):
+#     headers.update({'Authorization':access_token})
+    res = requests.put(url=url+"tasks_on_run",headers=headers,data=json.dumps(data))
+#     res = requests.post(url=url+"tasks_on_run",headers=headers,data=json.dumps(data))
+    con = res.content.decode('utf-8')
+    return json.loads(con)
+
+
 if __name__=="__main__":
     # print(login("aab@aa.com","welcome123"))
     res_u = updates("Q0Lvyw$oPqXPoXvxRd#C",data={"vm":"wpva","stop_vm":"Y"})

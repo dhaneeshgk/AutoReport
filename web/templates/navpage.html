@@ -5,7 +5,7 @@
             <style>
             .rd {
                 border-radius: 25px;
-                border: 2px solid #73AD21;
+                border: 2px solid #FE9A2E;
                 padding: 10px;
                 width: 100px;
                 height: 40px;
@@ -18,7 +18,7 @@
                 top:30%;
                 bottom:20%;
                 border-radius: 11px;
-                border: 2px solid #73AD20;
+                border: 2px solid #FE9A2E;
                 padding: 10px;
                 width: 100px;
                 height: 160px;
@@ -29,7 +29,7 @@
                 bottom:1%;
                 right:1%;
                 border-radius: 35px;
-                border: 2px solid #73AD21;
+                border: 2px solid #FE9A2E;
                 width: 500px;
                 height: 70px;
                 text-align: center;
@@ -56,6 +56,12 @@
             <!-- <form action="{{url_for('manage_vms')}}" method="GET">
                 <button class="rd" type="submit">virtual machines</button>
             </form> -->
+            <form action="{{url_for('schedules_on_run')}}" method="POST">
+                <button class="rd" type="submit">schedules on run</button>
+            </form>
+            <form action="{{url_for('schedules_completed')}}" method="POST">
+                <button class="rd" type="submit">schedules completed</button>
+            </form>
             <form action="{{url_for('logout')}}" method="POST">
                 <button class="rd" type="submit">logout</button>
             </form>
