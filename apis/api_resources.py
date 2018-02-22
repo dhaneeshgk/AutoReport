@@ -1043,7 +1043,7 @@ class Tasks_Completed(db.Model):
     id = db.Column(db.String(16),primary_key=True)
     date = db.Column(db.String(10))
     time = db.Column(db.String(15))
-    task = db.Column(db.String(120),unique=True)
+    task = db.Column(db.String(120))
     description = db.Column(db.String(200))
     vm = db.Column(db.String(20))
     environment = db.Column(db.String(10))
@@ -1051,6 +1051,7 @@ class Tasks_Completed(db.Model):
     schedule_date = db.Column(db.String(10))
     schedule_time = db.Column(db.String(10))
     scheduler = db.Column(db.String(200))
+    report = db.Column(db.String(22))
 
     def __init__(self,id,date,time,task,descripton,vm,environment,scheduler):
         self.id = id
