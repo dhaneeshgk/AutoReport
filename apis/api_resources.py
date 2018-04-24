@@ -1123,11 +1123,10 @@ class tasks_completed(Resource):
 class test_links_wittyparrot(Resource):
 
     def get(self):
-        val = request.url
-        print(val)
-        val = val.split("#")[1]
-        print(val)
-        return jsonify({"value":val})
+        # val = request.url
+        # print(val)
+        # val = val.split("#")[1]
+        return request.url
 
 
 api.add_resource(get_user,'/get_user')
