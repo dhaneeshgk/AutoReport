@@ -1124,6 +1124,7 @@ class test_links_wittyparrot(Resource):
 
     def get(self):
         val = request.url
+        print(val)
         val = val.split("#")[1]
         print(val)
         return jsonify({"value":val})
