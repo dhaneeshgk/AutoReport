@@ -1144,7 +1144,7 @@ api.add_resource(test_suites,'/test_suites')
 api.add_resource(docs,'/docs')
 api.add_resource(tasks_on_run,'/tasks_on_run')
 api.add_resource(tasks_completed,'/tasks_completed')
-api.add_resource(test_links_wittyparrot,'/test_links_wittyparrot')
+api.add_resource(test_links_wittyparrot,'/test_links_wittyparrot/#')
 
 
 
