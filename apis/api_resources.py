@@ -1123,7 +1123,7 @@ class tasks_completed(Resource):
 class test_links_wittyparrot(Resource):
 
     def get(self):
-        val = request.url.copy()
+        val = request.url
         val = val.split("#")[1]
         return jsonify({"value":val})
 
