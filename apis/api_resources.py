@@ -12,6 +12,7 @@ from dbs import dbs
 import random
 from datetime import datetime
 import os
+import json
 
 app = Flask(__name__)
 api = Api(app)
@@ -1131,24 +1132,29 @@ class test_links_wittyparrot(Resource):
 class clients_list(Resource):
 
     def get(self,clientName):
-        return request.url
+        data_set = json.loads(open("DATA_SET.json","r").read())
+        data_set = [i for i in data_set if i["ClientName"].find(clientName)>0]
+        return jsonify(data_set)
 
 
 class clients(Resource):
 
     def get(self):
-        return request.url
+        data_set = json.loads(open("DATA_SET.json","r").read())
+        return jsonify(data_set)
 
 class fav_client(Resource):
 
     def get(self):
-        return request.url
+        data_set = json.loads(open("Fav_JSON.json","r").read())
+        return jsonify(data_set)
 
 
 class contact_client(Resource):
 
     def get(self,clientName):
-        return request.url
+        data_set = json.loads(open("DATA_SET.json","r").read())
+        return jsonify(data_set)
 
 
 
