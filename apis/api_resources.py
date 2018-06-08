@@ -1058,7 +1058,7 @@ class Tasks_Completed(db.Model):
         self.date = date
         self.time = time
         self.task = task
-        self.description = description
+        self.description = descripton
         self.vm = vm
         self.environment = environment
         self.test_suite = test_suite
@@ -1128,6 +1128,30 @@ class test_links_wittyparrot(Resource):
         # val = val.split("#")[1]
         return request.url
 
+class clients_list(Resource):
+
+    def get(self,clientName):
+        return request.url
+
+
+class clients(Resource):
+
+    def get(self,clientName):
+        return request.url
+
+class fav_client(Resource):
+
+    def get(self):
+        return request.url
+
+
+class contact_client(Resource):
+
+    def get(self,clientName):
+        return request.url
+
+
+
 
 api.add_resource(get_user,'/get_user')
 api.add_resource(logs,'/logs')
@@ -1145,6 +1169,12 @@ api.add_resource(docs,'/docs')
 api.add_resource(tasks_on_run,'/tasks_on_run')
 api.add_resource(tasks_completed,'/tasks_completed')
 api.add_resource(test_links_wittyparrot,'/test_links_wittyparrot/')
+api.add_resource(clients_list, '/clients/clientName/<clientName>')
+api.add_resource(fav_client, '/clients/favorites')
+api.add_resource(contact_client, '/clientmanager/clients/clientName/<clientName>')
+api.add_resource(clients, '/clients')
+
+
 
 
 
