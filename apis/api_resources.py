@@ -1136,7 +1136,7 @@ class clients_list(Resource):
 
 class clients(Resource):
 
-    def get(self,clientName):
+    def get(self):
         return request.url
 
 class fav_client(Resource):
