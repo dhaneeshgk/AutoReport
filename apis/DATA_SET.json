@@ -13,7 +13,7 @@
   },
   "ClientBelongsto": {
     "ClientBelongstoId": "5",
-    "ClientBelongstoName": "Cananda"
+    "ClientBelongstoName": "Canada"
   },
   "ClientSector": {
     "ClientSectorId": "4",
@@ -403,6 +403,410 @@
     "UserName": "Ekisha"
   },
   "UpdatedOn": "2018-07-25T14:30:00.000"
+},
+{
+ "ClientId": "6",
+  "Organization": {
+    "OrganizationId": "1",
+    "OrginizationName": "US Enterprise"
+  },
+  "ClientCode": "TMP002",
+  "ClientName": "Adobe",
+  "ClientStatus": {
+    "ClientStatusId": "TEMP",
+    "ClientStatusName": "Temporary"
+  },
+  "ClientBelongsto": {
+    "ClientBelongstoId": "4",
+    "ClientBelongstoName": "Brillio"
+  },
+  "ClientSector": {
+    "ClientSectorId": "5",
+    "ClientSectorName": "Insurance"
+  },
+  "Division": {
+    "DivisionId": "2",
+    "DivisionName": "FS"
+  },
+  "Region": {
+    "RegionId": "3",
+    "RegionName": "Austin"
+  },
+  "ClientType": {
+    "ClientTypeId": "2",
+    "ClientTypeName": "Regional"
+  },
+  "EffectiveDate": "2018-04-20",
+  "PhoneNo": "13029870491",
+  "BuHead": "Daiwik",
+  "CorporateHqCountry": {
+    "CountryId": "3",
+    "CountryName": "Canada"
+  },
+  "CorporateHqState": {
+    "StateId": "2",
+    "StateName": "Alberta"
+  },
+  "CorporateHqCity": {
+    "CityId": "2",
+    "CityName": "Greenville"
+  },
+  "ClientLeadSource": {
+    "ClientLeadSourceId": "5",
+    "ClientLeadSourceName": "Cold Calling"
+  },
+  "TotalRevenue": "50789908",
+  "IsFortune500": "true",
+  "Msp": {
+    "MspId": "7",
+    "MspName": "Bartech"
+  },
+  "Vms": {
+    "VmsId": "8",
+    "VmsName": "Beeline"
+  },
+  "TotalItSpend": "409890",
+  "TotalStaffingProgramSpend": "100000",
+  "TotalItStaffingProgramSpend": "100000",
+  "NoOfSuppliers": "5",
+  "NoOfSuppliersIt": "3",
+  "ClientLogo": "",
+  "ClientAcquisitionPursuitNote": "notes",
+  "IsActive": "true",
+  "IsDeleted": "false",
+  "CreatedBy": {
+    "UserId": "22",
+    "UserName": "Daman"
+  },
+  "CreatedOn": "2018-06-23T15:10:15.000",
+  "UpdatedBy": {
+    "UserId": "22",
+    "UserName": "Daman"
+  },
+  "UpdatedOn": "2018-06-27T14:15:30.000"
+},
+{
+ "ClientId": "7",
+  "Organization": {
+    "OrganizationId": "1",
+    "OrginizationName": "US Enterprise"
+  },
+  "ClientCode": "TMP002",
+  "ClientName": "Adobe",
+  "ClientStatus": {
+    "ClientStatusId": "TEMP",
+    "ClientStatusName": "Temporary"
+  },
+  "ClientBelongsto": {
+    "ClientBelongstoId": "4",
+    "ClientBelongstoName": "Brillio"
+  },
+  "ClientSector": {
+    "ClientSectorId": "5",
+    "ClientSectorName": "Entertainment"
+  },
+  "Division": {
+    "DivisionId": "2",
+    "DivisionName": "FS"
+  },
+  "Region": {
+    "RegionId": "3",
+    "RegionName": "Austin"
+  },
+  "ClientType": {
+    "ClientTypeId": "2",
+    "ClientTypeName": "Regional"
+  },
+  "EffectiveDate": "2018-02-15",
+  "PhoneNo": "13029870492",
+  "BuHead": "Dawan",
+  "CorporateHqCountry": {
+    "CountryId": "3",
+    "CountryName": "Canada"
+  },
+  "CorporateHqState": {
+    "StateId": "2",
+    "StateName": "Alberta"
+  },
+  "CorporateHqCity": {
+    "CityId": "2",
+    "CityName": "Greenville"
+  },
+  "ClientLeadSource": {
+    "ClientLeadSourceId": "5",
+    "ClientLeadSourceName": "Cold Calling"
+  },
+  "TotalRevenue": "50789908",
+  "IsFortune500": "true",
+  "Msp": {
+    "MspId": "7",
+    "MspName": "Bartech"
+  },
+  "Vms": {
+    "VmsId": "8",
+    "VmsName": "Beeline"
+  },
+  "TotalItSpend": "409890",
+  "TotalStaffingProgramSpend": "100000",
+  "TotalItStaffingProgramSpend": "100000",
+  "NoOfSuppliers": "5",
+  "NoOfSuppliersIt": "3",
+  "ClientLogo": "",
+  "ClientAcquisitionPursuitNote": "notes",
+  "IsActive": "true",
+  "IsDeleted": "false",
+  "CreatedBy": {
+    "UserId": "25",
+    "UserName": "Ela"
+  },
+  "CreatedOn": "2018-06-23T15:10:15.000",
+  "UpdatedBy": {
+    "UserId": "22",
+    "UserName": "Ela"
+  },
+  "UpdatedOn": "2018-07-27T14:15:30.000"
+},
+{
+ "ClientId": "8",
+  "Organization": {
+    "OrganizationId": "1",
+    "OrginizationName": "US Enterprise"
+  },
+  "ClientCode": "TMP002",
+  "ClientName": "Adobe",
+  "ClientStatus": {
+    "ClientStatusId": "TEMP",
+    "ClientStatusName": "Temporary"
+  },
+  "ClientBelongsto": {
+    "ClientBelongstoId": "4",
+    "ClientBelongstoName": "WebXL"
+  },
+  "ClientSector": {
+    "ClientSectorId": "2",
+    "ClientSectorName": "Entertainment"
+  },
+  "Division": {
+    "DivisionId": "5",
+    "DivisionName": "Other"
+  },
+  "Region": {
+    "RegionId": "3",
+    "RegionName": "Austin"
+  },
+  "ClientType": {
+    "ClientTypeId": "2",
+    "ClientTypeName": "Regional"
+  },
+  "EffectiveDate": "2018-02-15",
+  "PhoneNo": "13029870492",
+  "BuHead": "Baalkrishna",
+  "CorporateHqCountry": {
+    "CountryId": "3",
+    "CountryName": "Canada"
+  },
+  "CorporateHqState": {
+    "StateId": "2",
+    "StateName": "Alberta"
+  },
+  "CorporateHqCity": {
+    "CityId": "2",
+    "CityName": "Greenville"
+  },
+  "ClientLeadSource": {
+    "ClientLeadSourceId": "5",
+    "ClientLeadSourceName": "Cold Calling"
+  },
+  "TotalRevenue": "50789908",
+  "IsFortune500": "true",
+  "Msp": {
+    "MspId": "7",
+    "MspName": "Bartech"
+  },
+  "Vms": {
+    "VmsId": "8",
+    "VmsName": "Beeline"
+  },
+  "TotalItSpend": "409890",
+  "TotalStaffingProgramSpend": "100000",
+  "TotalItStaffingProgramSpend": "100000",
+  "NoOfSuppliers": "5",
+  "NoOfSuppliersIt": "3",
+  "ClientLogo": "",
+  "ClientAcquisitionPursuitNote": "notes",
+  "IsActive": "true",
+  "IsDeleted": "false",
+  "CreatedBy": {
+    "UserId": "30",
+    "UserName": "Ekisha"
+  },
+  "CreatedOn": "2018-06-23T15:10:15.000",
+  "UpdatedBy": {
+    "UserId": "30",
+    "UserName": "Ekisha"
+  },
+  "UpdatedOn": "2018-08-01T05:30.000"
+},
+{
+ "ClientId": "9",
+  "Organization": {
+    "OrganizationId": "1",
+    "OrginizationName": "US Enterprise"
+  },
+  "ClientCode": "TMP002",
+  "ClientName": "Adobe",
+  "ClientStatus": {
+    "ClientStatusId": "TEMP",
+    "ClientStatusName": "Temporary"
+  },
+  "ClientBelongsto": {
+    "ClientBelongstoId": "2",
+    "ClientBelongstoName": "Canada"
+  },
+  "ClientSector": {
+    "ClientSectorId": "7",
+    "ClientSectorName": "Pharmaceuticals"
+  },
+  "Division": {
+    "DivisionId": "5",
+    "DivisionName": "Other"
+  },
+  "Region": {
+    "RegionId": "3",
+    "RegionName": "Austin"
+  },
+  "ClientType": {
+    "ClientTypeId": "2",
+    "ClientTypeName": "Regional"
+  },
+  "EffectiveDate": "2018-02-15",
+  "PhoneNo": "13029870493",
+  "BuHead": "Chakor",
+  "CorporateHqCountry": {
+    "CountryId": "3",
+    "CountryName": "Canada"
+  },
+  "CorporateHqState": {
+    "StateId": "2",
+    "StateName": "Alberta"
+  },
+  "CorporateHqCity": {
+    "CityId": "2",
+    "CityName": "Greenville"
+  },
+  "ClientLeadSource": {
+    "ClientLeadSourceId": "5",
+    "ClientLeadSourceName": "Cold Calling"
+  },
+  "TotalRevenue": "50789908",
+  "IsFortune500": "true",
+  "Msp": {
+    "MspId": "7",
+    "MspName": "Bartech"
+  },
+  "Vms": {
+    "VmsId": "8",
+    "VmsName": "Beeline"
+  },
+  "TotalItSpend": "409890",
+  "TotalStaffingProgramSpend": "100000",
+  "TotalItStaffingProgramSpend": "100000",
+  "NoOfSuppliers": "5",
+  "NoOfSuppliersIt": "3",
+  "ClientLogo": "",
+  "ClientAcquisitionPursuitNote": "notes",
+  "IsActive": "true",
+  "IsDeleted": "false",
+  "CreatedBy": {
+    "UserId": "14",
+    "UserName": "Chaman"
+  },
+  "CreatedOn": "2018-04-11T15:10:30.000",
+  "UpdatedBy": {
+    "UserId": "14",
+    "UserName": "Chaman"
+  },
+  "UpdatedOn": "2018-05-13T14:30.000"
+},
+{
+ "ClientId": "10",
+  "Organization": {
+    "OrganizationId": "1",
+    "OrginizationName": "US Enterprise"
+  },
+  "ClientCode": "TMP002",
+  "ClientName": "Adobe",
+  "ClientStatus": {
+    "ClientStatusId": "TEMP",
+    "ClientStatusName": "Temporary"
+  },
+  "ClientBelongsto": {
+    "ClientBelongstoId": "2",
+    "ClientBelongstoName": "Canada"
+  },
+  "ClientSector": {
+    "ClientSectorId": "9",
+    "ClientSectorName": "Telecom"
+  },
+  "Division": {
+    "DivisionId": "1",
+    "DivisionName": "CnM"
+  },
+  "Region": {
+    "RegionId": "3",
+    "RegionName": "Austin"
+  },
+  "ClientType": {
+    "ClientTypeId": "2",
+    "ClientTypeName": "Regional"
+  },
+  "EffectiveDate": "2018-03-27",
+  "PhoneNo": "13029870494",
+  "BuHead": "",
+  "CorporateHqCountry": {
+    "CountryId": "3",
+    "CountryName": "Canada"
+  },
+  "CorporateHqState": {
+    "StateId": "2",
+    "StateName": "Alberta"
+  },
+  "CorporateHqCity": {
+    "CityId": "2",
+    "CityName": "Greenville"
+  },
+  "ClientLeadSource": {
+    "ClientLeadSourceId": "5",
+    "ClientLeadSourceName": "Cold Calling"
+  },
+  "TotalRevenue": "50789908",
+  "IsFortune500": "true",
+  "Msp": {
+    "MspId": "7",
+    "MspName": "Bartech"
+  },
+  "Vms": {
+    "VmsId": "8",
+    "VmsName": "Beeline"
+  },
+  "TotalItSpend": "409890",
+  "TotalStaffingProgramSpend": "100000",
+  "TotalItStaffingProgramSpend": "100000",
+  "NoOfSuppliers": "5",
+  "NoOfSuppliersIt": "3",
+  "ClientLogo": "",
+  "ClientAcquisitionPursuitNote": "notes",
+  "IsActive": "true",
+  "IsDeleted": "false",
+  "CreatedBy": {
+    "UserId": "16",
+    "UserName": "Charvi"
+  },
+  "CreatedOn": "2018-05-21T07:10:30.000",
+  "UpdatedBy": {
+    "UserId": "16",
+    "UserName": "Charvi"
+  },
+  "UpdatedOn": "2018-07-13T15:30.000"
 }
-
 ]
