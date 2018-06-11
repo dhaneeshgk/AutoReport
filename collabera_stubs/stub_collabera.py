@@ -40,20 +40,20 @@ class clients(Resource):
 
     def get(self):
         data_set = json.loads(open("DATA_SET.json","r").read())
-        return {"Results":jsonify(data_set)}
+        return jsonify({"Results":data_set})
 
 class fav_client(Resource):
 
     def get(self):
         data_set = json.loads(open("Fav_JSON.json","r").read())
-        return {"Results":jsonify(data_set)}
+        return jsonify({"Results":data_set})
 
 
 class contact_client(Resource):
 
     def get(self,clientName):
         data_set = json.loads(open("DATA_SET.json","r").read())
-        return {"Results":jsonify(data_set)}
+        return jsonify({"Results":data_set})
 
 
 api.add_resource(test_links_wittyparrot,'/test_links_wittyparrot/')
