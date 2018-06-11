@@ -33,27 +33,27 @@ class clients_list(Resource):
     def get(self,clientName):
         data_set = json.loads(open("DATA_SET.json","r").read())
         # print(data_set[0]["ClientName"], data_set[0]["ClientName"].find(clientName))
-        data_set = [i for i in data_set if i["ClientName"].lower().find(clientName.lower())>=0]
+        data_set = {"Results":[i for i in data_set if i["ClientName"].lower().find(clientName.lower())>=0]}
         return jsonify(data_set)
 
 class clients(Resource):
 
     def get(self):
         data_set = json.loads(open("DATA_SET.json","r").read())
-        return jsonify(data_set)
+        return {"Results":jsonify(data_set)}
 
 class fav_client(Resource):
 
     def get(self):
         data_set = json.loads(open("Fav_JSON.json","r").read())
-        return jsonify(data_set)
+        return {"Results":jsonify(data_set)}
 
 
 class contact_client(Resource):
 
     def get(self,clientName):
         data_set = json.loads(open("DATA_SET.json","r").read())
-        return jsonify(data_set)
+        return {"Results":jsonify(data_set)}
 
 
 api.add_resource(test_links_wittyparrot,'/test_links_wittyparrot/')
