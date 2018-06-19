@@ -56,8 +56,28 @@ class contact_client(Resource):
         return jsonify({"Results":data_set})
 
 
+class my_to_dos(Resource):
+
+    def get(self,date=None):
+        data_set = json.loads(open("./ToDo-DB/mytodos.json").read())
+        return jsonify({"Results":data_set})
+
+class update_to_dos(Resource):
+
+    def put(self,todo):
+        return jsonify({"Results":"PUT is sucessfull"})
+
+class add_to_dos(Resource):
+
+    def post(self):
+        return jsonify({"Results":"Successfully Added to do"})
+
+
 api.add_resource(test_links_wittyparrot,'/test_links_wittyparrot/')
 api.add_resource(clients_list, '/clients/clientName/<clientName>')
 api.add_resource(fav_client, '/clients/favorites')
 api.add_resource(contact_client, '/clientmanager/clients/clientName/<clientName>')
 api.add_resource(clients, '/clients')
+api.add_resource(my_to_dos,'/org/us_entr/todos/users/me')
+api.add_resource(add_to_dos,'/org/us_entr/todos')
+api.add_resource(update_to_dos,'/org/us_entr/todos/<todo>/reminders')
