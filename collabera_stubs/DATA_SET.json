@@ -6,7 +6,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP001",
-  "ClientName": "Microsoft",
+  "ClientName": "Microsoft US Private Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -87,7 +87,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP001",
-  "ClientName": "Microsoft",
+  "ClientName": "Microsoft India Pvt Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -168,7 +168,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP001",
-  "ClientName": "Microsoft",
+  "ClientName": "Microsoft Cannada Pvt Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -249,7 +249,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP001",
-  "ClientName": "Microsoft",
+  "ClientName": "Microsoft Inc",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -330,7 +330,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP001",
-  "ClientName": "Microsoft",
+  "ClientName": "Microsoft UK Pvt Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -411,7 +411,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP002",
-  "ClientName": "Adobe",
+  "ClientName": "Adobe Inc",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -492,7 +492,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP002",
-  "ClientName": "Adobe",
+  "ClientName": "Adobe Pvt Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -573,7 +573,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP002",
-  "ClientName": "Adobe",
+  "ClientName": "Adobe Consultants Pvt Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -654,7 +654,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP002",
-  "ClientName": "Adobe",
+  "ClientName": "Adobe US Private Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -735,7 +735,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP002",
-  "ClientName": "Adobe",
+  "ClientName": "Adobe Systems Pvt Limited",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
