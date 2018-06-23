@@ -6,7 +6,7 @@
     "OrginizationName": "US Enterprise"
   },
   "ClientCode": "TMP001",
-  "ClientName": "Microsoft US Private Ltd",
+  "ClientName": "IBM India Pvt Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -36,15 +36,15 @@
   "BuHead": "Anjani Kumar",
   "CorporateHqCountry": {
     "CountryId": "3",
-    "CountryName": "Canada"
+    "CountryName": "India"
   },
   "CorporateHqState": {
     "StateId": "2",
-    "StateName": "Alberta"
+    "StateName": "Karnataka"
   },
   "CorporateHqCity": {
     "CityId": "2",
-    "CityName": "Greenville"
+    "CityName": "Bangalore"
   },
   "ClientLeadSource": {
     "ClientLeadSourceId": "5",
@@ -86,8 +86,8 @@
     "OrganizationId": "1",
     "OrginizationName": "US Enterprise"
   },
-  "ClientCode": "TMP001",
-  "ClientName": "Microsoft India Pvt Ltd",
+  "ClientCode": "TMP002",
+  "ClientName": "IBM Labs",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -114,18 +114,18 @@
   },
   "EffectiveDate": "2018-04-11",
   "PhoneNo": "13027870098",
-  "BuHead": "Aadhishankar",
+  "BuHead": "John David",
   "CorporateHqCountry": {
     "CountryId": "3",
-    "CountryName": "Canada"
+    "CountryName": "India"
   },
   "CorporateHqState": {
     "StateId": "2",
-    "StateName": "Alberta"
+    "StateName": "Andhra Pradesh"
   },
   "CorporateHqCity": {
     "CityId": "2",
-    "CityName": "Greenville"
+    "CityName": "Hyderabad"
   },
   "ClientLeadSource": {
     "ClientLeadSourceId": "5",
@@ -152,12 +152,12 @@
   "IsDeleted": "false",
   "CreatedBy": {
     "UserId": "35",
-    "UserName": "Aahan"
+    "UserName": "Joy"
   },
   "CreatedOn": "2018-06-02T8:30:00.000",
   "UpdatedBy": {
     "UserId": "35",
-    "UserName": "Aahan"
+    "UserName": "Joy"
   },
   "UpdatedOn": "2018-05-02T10:10:00.000"
 },
@@ -167,8 +167,8 @@
     "OrganizationId": "1",
     "OrginizationName": "US Enterprise"
   },
-  "ClientCode": "TMP001",
-  "ClientName": "Microsoft Cannada Pvt Ltd",
+  "ClientCode": "TMP003",
+  "ClientName": "IBM Cannada",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -195,7 +195,7 @@
   },
   "EffectiveDate": "2018-02-10",
   "PhoneNo": "13029870198",
-  "BuHead": "Badri Prasad",
+  "BuHead": "Kushal",
   "CorporateHqCountry": {
     "CountryId": "3",
     "CountryName": "Canada"
@@ -233,12 +233,12 @@
   "IsDeleted": "false",
   "CreatedBy": {
     "UserId": "10",
-    "UserName": "Badrinath"
+    "UserName": "Mark"
   },
   "CreatedOn": "2018-05-18T14:30:00.000",
   "UpdatedBy": {
     "UserId": "10",
-    "UserName": "Badrinath"
+    "UserName": "Mark"
   },
   "UpdatedOn": "2018-06-28T14:30:00.000"
 },
@@ -248,8 +248,8 @@
     "OrganizationId": "1",
     "OrginizationName": "US Enterprise"
   },
-  "ClientCode": "TMP001",
-  "ClientName": "Microsoft Inc",
+  "ClientCode": "TMP004",
+  "ClientName": "IBM US",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -276,18 +276,18 @@
   },
   "EffectiveDate": "2018-01-01",
   "PhoneNo": "13029870298",
-  "BuHead": "Chakradhar",
+  "BuHead": "James",
   "CorporateHqCountry": {
     "CountryId": "3",
-    "CountryName": "Canada"
+    "CountryName": "US"
   },
   "CorporateHqState": {
     "StateId": "2",
-    "StateName": "Alberta"
+    "StateName": "California"
   },
   "CorporateHqCity": {
     "CityId": "2",
-    "CityName": "Greenville"
+    "CityName": "Los Angeles"
   },
   "ClientLeadSource": {
     "ClientLeadSourceId": "5",
@@ -314,12 +314,12 @@
   "IsDeleted": "false",
   "CreatedBy": {
     "UserId": "04",
-    "UserName": "Chaitanya"
+    "UserName": "Lia"
   },
   "CreatedOn": "2018-03-30T12:30:00.000",
   "UpdatedBy": {
     "UserId": "04",
-    "UserName": "Chaitanya"
+    "UserName": "Lia"
   },
   "UpdatedOn": "2018-04-10T10:30:00.000"
 },
@@ -329,8 +329,8 @@
     "OrganizationId": "1",
     "OrginizationName": "US Enterprise"
   },
-  "ClientCode": "TMP001",
-  "ClientName": "Microsoft UK Pvt Ltd",
+  "ClientCode": "TMP005",
+  "ClientName": "Microsoft",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -357,18 +357,18 @@
   },
   "EffectiveDate": "2018-03-25",
   "PhoneNo": "13029870498",
-  "BuHead": "Daiwik",
+  "BuHead": "Hary James",
   "CorporateHqCountry": {
     "CountryId": "3",
-    "CountryName": "Canada"
+    "CountryName": "India"
   },
   "CorporateHqState": {
     "StateId": "2",
-    "StateName": "Alberta"
+    "StateName": "Tamil Nadu"
   },
   "CorporateHqCity": {
     "CityId": "2",
-    "CityName": "Greenville"
+    "CityName": "Chennai"
   },
   "ClientLeadSource": {
     "ClientLeadSourceId": "5",
@@ -395,12 +395,12 @@
   "IsDeleted": "false",
   "CreatedBy": {
     "UserId": "15",
-    "UserName": "Ekisha"
+    "UserName": "George"
   },
   "CreatedOn": "2018-07-20T15:30:00.000",
   "UpdatedBy": {
     "UserId": "15",
-    "UserName": "Ekisha"
+    "UserName": "George"
   },
   "UpdatedOn": "2018-07-25T14:30:00.000"
 },
@@ -410,8 +410,8 @@
     "OrganizationId": "1",
     "OrginizationName": "US Enterprise"
   },
-  "ClientCode": "TMP002",
-  "ClientName": "Adobe Inc",
+  "ClientCode": "TMP006",
+  "ClientName": "Microsoft Redmond",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -438,18 +438,18 @@
   },
   "EffectiveDate": "2018-04-20",
   "PhoneNo": "13029870491",
-  "BuHead": "Daiwik",
+  "BuHead": "Ben James",
   "CorporateHqCountry": {
     "CountryId": "3",
-    "CountryName": "Canada"
+    "CountryName": "US"
   },
   "CorporateHqState": {
     "StateId": "2",
-    "StateName": "Alberta"
+    "StateName": "Washington"
   },
   "CorporateHqCity": {
     "CityId": "2",
-    "CityName": "Greenville"
+    "CityName": "Redmond"
   },
   "ClientLeadSource": {
     "ClientLeadSourceId": "5",
@@ -476,12 +476,12 @@
   "IsDeleted": "false",
   "CreatedBy": {
     "UserId": "22",
-    "UserName": "Daman"
+    "UserName": "George Mark"
   },
   "CreatedOn": "2018-06-23T15:10:15.000",
   "UpdatedBy": {
     "UserId": "22",
-    "UserName": "Daman"
+    "UserName": "George Mark"
   },
   "UpdatedOn": "2018-06-27T14:15:30.000"
 },
@@ -491,8 +491,8 @@
     "OrganizationId": "1",
     "OrginizationName": "US Enterprise"
   },
-  "ClientCode": "TMP002",
-  "ClientName": "Adobe Pvt Ltd",
+  "ClientCode": "TMP007",
+  "ClientName": "Microsoft Hyderabad Pvt Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -519,18 +519,18 @@
   },
   "EffectiveDate": "2018-02-15",
   "PhoneNo": "13029870492",
-  "BuHead": "Dawan",
+  "BuHead": "Girish",
   "CorporateHqCountry": {
     "CountryId": "3",
-    "CountryName": "Canada"
+    "CountryName": "India"
   },
   "CorporateHqState": {
     "StateId": "2",
-    "StateName": "Alberta"
+    "StateName": "Andhra Pradesh"
   },
   "CorporateHqCity": {
     "CityId": "2",
-    "CityName": "Greenville"
+    "CityName": "Hyderabad"
   },
   "ClientLeadSource": {
     "ClientLeadSourceId": "5",
@@ -572,8 +572,8 @@
     "OrganizationId": "1",
     "OrginizationName": "US Enterprise"
   },
-  "ClientCode": "TMP002",
-  "ClientName": "Adobe Consultants Pvt Ltd",
+  "ClientCode": "TMP008",
+  "ClientName": "Microsoft Bangalore Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -600,18 +600,18 @@
   },
   "EffectiveDate": "2018-02-15",
   "PhoneNo": "13029870492",
-  "BuHead": "Baalkrishna",
+  "BuHead": "Manju",
   "CorporateHqCountry": {
     "CountryId": "3",
-    "CountryName": "Canada"
+    "CountryName": "India"
   },
   "CorporateHqState": {
     "StateId": "2",
-    "StateName": "Alberta"
+    "StateName": "Karnataka"
   },
   "CorporateHqCity": {
     "CityId": "2",
-    "CityName": "Greenville"
+    "CityName": "Bangalore"
   },
   "ClientLeadSource": {
     "ClientLeadSourceId": "5",
@@ -638,12 +638,12 @@
   "IsDeleted": "false",
   "CreatedBy": {
     "UserId": "30",
-    "UserName": "Ekisha"
+    "UserName": "Justin"
   },
   "CreatedOn": "2018-06-23T15:10:15.000",
   "UpdatedBy": {
     "UserId": "30",
-    "UserName": "Ekisha"
+    "UserName": "Justin"
   },
   "UpdatedOn": "2018-08-01T05:30.000"
 },
@@ -653,8 +653,8 @@
     "OrganizationId": "1",
     "OrginizationName": "US Enterprise"
   },
-  "ClientCode": "TMP002",
-  "ClientName": "Adobe US Private Ltd",
+  "ClientCode": "TMP009",
+  "ClientName": "Microsoft Pvt Ltd",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
     "ClientStatusName": "Temporary"
@@ -684,15 +684,15 @@
   "BuHead": "Chakor",
   "CorporateHqCountry": {
     "CountryId": "3",
-    "CountryName": "Canada"
+    "CountryName": "India"
   },
   "CorporateHqState": {
     "StateId": "2",
-    "StateName": "Alberta"
+    "StateName": "Kerala"
   },
   "CorporateHqCity": {
     "CityId": "2",
-    "CityName": "Greenville"
+    "CityName": "Kochi"
   },
   "ClientLeadSource": {
     "ClientLeadSourceId": "5",
@@ -719,12 +719,12 @@
   "IsDeleted": "false",
   "CreatedBy": {
     "UserId": "14",
-    "UserName": "Chaman"
+    "UserName": "John David"
   },
   "CreatedOn": "2018-04-11T15:10:30.000",
   "UpdatedBy": {
     "UserId": "14",
-    "UserName": "Chaman"
+    "UserName": "John David"
   },
   "UpdatedOn": "2018-05-13T14:30.000"
 },
@@ -734,7 +734,7 @@
     "OrganizationId": "1",
     "OrginizationName": "US Enterprise"
   },
-  "ClientCode": "TMP002",
+  "ClientCode": "TMP010",
   "ClientName": "Adobe Systems Pvt Limited",
   "ClientStatus": {
     "ClientStatusId": "TEMP",
@@ -762,18 +762,18 @@
   },
   "EffectiveDate": "2018-03-27",
   "PhoneNo": "13029870494",
-  "BuHead": "",
+  "BuHead": "Mark John",
   "CorporateHqCountry": {
     "CountryId": "3",
-    "CountryName": "Canada"
+    "CountryName": "India"
   },
   "CorporateHqState": {
     "StateId": "2",
-    "StateName": "Alberta"
+    "StateName": "New Delhi"
   },
   "CorporateHqCity": {
     "CityId": "2",
-    "CityName": "Greenville"
+    "CityName": "Gurgaon"
   },
   "ClientLeadSource": {
     "ClientLeadSourceId": "5",
@@ -800,13 +800,337 @@
   "IsDeleted": "false",
   "CreatedBy": {
     "UserId": "16",
-    "UserName": "Charvi"
+    "UserName": "John"
   },
   "CreatedOn": "2018-05-21T07:10:30.000",
   "UpdatedBy": {
     "UserId": "16",
-    "UserName": "Charvi"
+    "UserName": "John"
   },
   "UpdatedOn": "2018-07-13T15:30.000"
-}
+},
+{
+ "ClientId": "11",
+  "Organization": {
+    "OrganizationId": "1",
+    "OrginizationName": "US Enterprise"
+  },
+  "ClientCode": "TMP011",
+  "ClientName": "Adobe US",
+  "ClientStatus": {
+    "ClientStatusId": "TEMP",
+    "ClientStatusName": "Temporary"
+  },
+  "ClientBelongsto": {
+    "ClientBelongstoId": "2",
+    "ClientBelongstoName": "Canada"
+  },
+  "ClientSector": {
+    "ClientSectorId": "9",
+    "ClientSectorName": "Telecom"
+  },
+  "Division": {
+    "DivisionId": "1",
+    "DivisionName": "CnM"
+  },
+  "Region": {
+    "RegionId": "3",
+    "RegionName": "Austin"
+  },
+  "ClientType": {
+    "ClientTypeId": "2",
+    "ClientTypeName": "Regional"
+  },
+  "EffectiveDate": "2018-03-27",
+  "PhoneNo": "13029870494",
+  "BuHead": "Mark John",
+  "CorporateHqCountry": {
+    "CountryId": "3",
+    "CountryName": "US"
+  },
+  "CorporateHqState": {
+    "StateId": "2",
+    "StateName": "Texas"
+  },
+  "CorporateHqCity": {
+    "CityId": "2",
+    "CityName": "Houston"
+  },
+  "ClientLeadSource": {
+    "ClientLeadSourceId": "5",
+    "ClientLeadSourceName": "Cold Calling"
+  },
+  "TotalRevenue": "50789908",
+  "IsFortune500": "true",
+  "Msp": {
+    "MspId": "7",
+    "MspName": "Bartech"
+  },
+  "Vms": {
+    "VmsId": "8",
+    "VmsName": "Beeline"
+  },
+  "TotalItSpend": "409890",
+  "TotalStaffingProgramSpend": "100000",
+  "TotalItStaffingProgramSpend": "100000",
+  "NoOfSuppliers": "5",
+  "NoOfSuppliersIt": "3",
+  "ClientLogo": "",
+  "ClientAcquisitionPursuitNote": "notes",
+  "IsActive": "true",
+  "IsDeleted": "false",
+  "CreatedBy": {
+    "UserId": "16",
+    "UserName": "John"
+  },
+  "CreatedOn": "2018-05-21T07:10:30.000",
+  "UpdatedBy": {
+    "UserId": "16",
+    "UserName": "John"
+  },
+  "UpdatedOn": "2018-07-13T15:30.000"
+},
+{
+ "ClientId": "12",
+  "Organization": {
+    "OrganizationId": "1",
+    "OrginizationName": "US Enterprise"
+  },
+  "ClientCode": "TMP012",
+  "ClientName": "Google",
+  "ClientStatus": {
+    "ClientStatusId": "TEMP",
+    "ClientStatusName": "Temporary"
+  },
+  "ClientBelongsto": {
+    "ClientBelongstoId": "2",
+    "ClientBelongstoName": "Canada"
+  },
+  "ClientSector": {
+    "ClientSectorId": "9",
+    "ClientSectorName": "Telecom"
+  },
+  "Division": {
+    "DivisionId": "1",
+    "DivisionName": "CnM"
+  },
+  "Region": {
+    "RegionId": "3",
+    "RegionName": "Austin"
+  },
+  "ClientType": {
+    "ClientTypeId": "2",
+    "ClientTypeName": "Regional"
+  },
+  "EffectiveDate": "2018-03-27",
+  "PhoneNo": "13029870494",
+  "BuHead": "Mark John",
+  "CorporateHqCountry": {
+    "CountryId": "3",
+    "CountryName": "India"
+  },
+  "CorporateHqState": {
+    "StateId": "2",
+    "StateName": "Karnataka"
+  },
+  "CorporateHqCity": {
+    "CityId": "2",
+    "CityName": "Bangalore"
+  },
+  "ClientLeadSource": {
+    "ClientLeadSourceId": "5",
+    "ClientLeadSourceName": "Cold Calling"
+  },
+  "TotalRevenue": "50789908",
+  "IsFortune500": "true",
+  "Msp": {
+    "MspId": "7",
+    "MspName": "Bartech"
+  },
+  "Vms": {
+    "VmsId": "8",
+    "VmsName": "Beeline"
+  },
+  "TotalItSpend": "409890",
+  "TotalStaffingProgramSpend": "100000",
+  "TotalItStaffingProgramSpend": "100000",
+  "NoOfSuppliers": "5",
+  "NoOfSuppliersIt": "3",
+  "ClientLogo": "",
+  "ClientAcquisitionPursuitNote": "notes",
+  "IsActive": "true",
+  "IsDeleted": "false",
+  "CreatedBy": {
+    "UserId": "16",
+    "UserName": "John"
+  },
+  "CreatedOn": "2018-05-21T07:10:30.000",
+  "UpdatedBy": {
+    "UserId": "16",
+    "UserName": "John"
+  },
+  "UpdatedOn": "2018-07-13T15:30.000"
+},
+{
+ "ClientId": "14",
+  "Organization": {
+    "OrganizationId": "1",
+    "OrginizationName": "US Enterprise"
+  },
+  "ClientCode": "TMP014",
+  "ClientName": "Google US",
+  "ClientStatus": {
+    "ClientStatusId": "TEMP",
+    "ClientStatusName": "Temporary"
+  },
+  "ClientBelongsto": {
+    "ClientBelongstoId": "2",
+    "ClientBelongstoName": "Canada"
+  },
+  "ClientSector": {
+    "ClientSectorId": "9",
+    "ClientSectorName": "Telecom"
+  },
+  "Division": {
+    "DivisionId": "1",
+    "DivisionName": "CnM"
+  },
+  "Region": {
+    "RegionId": "3",
+    "RegionName": "Austin"
+  },
+  "ClientType": {
+    "ClientTypeId": "2",
+    "ClientTypeName": "Regional"
+  },
+  "EffectiveDate": "2018-03-27",
+  "PhoneNo": "13029870494",
+  "BuHead": "Mark John",
+  "CorporateHqCountry": {
+    "CountryId": "3",
+    "CountryName": "US"
+  },
+  "CorporateHqState": {
+    "StateId": "2",
+    "StateName": "England"
+  },
+  "CorporateHqCity": {
+    "CityId": "2",
+    "CityName": "Prague"
+  },
+  "ClientLeadSource": {
+    "ClientLeadSourceId": "5",
+    "ClientLeadSourceName": "Cold Calling"
+  },
+  "TotalRevenue": "50789908",
+  "IsFortune500": "true",
+  "Msp": {
+    "MspId": "7",
+    "MspName": "Bartech"
+  },
+  "Vms": {
+    "VmsId": "8",
+    "VmsName": "Beeline"
+  },
+  "TotalItSpend": "409890",
+  "TotalStaffingProgramSpend": "100000",
+  "TotalItStaffingProgramSpend": "100000",
+  "NoOfSuppliers": "5",
+  "NoOfSuppliersIt": "3",
+  "ClientLogo": "",
+  "ClientAcquisitionPursuitNote": "notes",
+  "IsActive": "true",
+  "IsDeleted": "false",
+  "CreatedBy": {
+    "UserId": "16",
+    "UserName": "John"
+  },
+  "CreatedOn": "2018-05-21T07:10:30.000",
+  "UpdatedBy": {
+    "UserId": "16",
+    "UserName": "John"
+  },
+  "UpdatedOn": "2018-07-13T15:30.000"
+},
+{
+ "ClientId": "13",
+  "Organization": {
+    "OrganizationId": "1",
+    "OrginizationName": "US Enterprise"
+  },
+  "ClientCode": "TMP013",
+  "ClientName": "Google Europe",
+  "ClientStatus": {
+    "ClientStatusId": "TEMP",
+    "ClientStatusName": "Temporary"
+  },
+  "ClientBelongsto": {
+    "ClientBelongstoId": "2",
+    "ClientBelongstoName": "Canada"
+  },
+  "ClientSector": {
+    "ClientSectorId": "9",
+    "ClientSectorName": "Telecom"
+  },
+  "Division": {
+    "DivisionId": "1",
+    "DivisionName": "CnM"
+  },
+  "Region": {
+    "RegionId": "3",
+    "RegionName": "Austin"
+  },
+  "ClientType": {
+    "ClientTypeId": "2",
+    "ClientTypeName": "Regional"
+  },
+  "EffectiveDate": "2018-03-27",
+  "PhoneNo": "13029870494",
+  "BuHead": "Mark John",
+  "CorporateHqCountry": {
+    "CountryId": "3",
+    "CountryName": "United Kingdom"
+  },
+  "CorporateHqState": {
+    "StateId": "2",
+    "StateName": "England"
+  },
+  "CorporateHqCity": {
+    "CityId": "2",
+    "CityName": "Prague"
+  },
+  "ClientLeadSource": {
+    "ClientLeadSourceId": "5",
+    "ClientLeadSourceName": "Cold Calling"
+  },
+  "TotalRevenue": "50789908",
+  "IsFortune500": "true",
+  "Msp": {
+    "MspId": "7",
+    "MspName": "Bartech"
+  },
+  "Vms": {
+    "VmsId": "8",
+    "VmsName": "Beeline"
+  },
+  "TotalItSpend": "409890",
+  "TotalStaffingProgramSpend": "100000",
+  "TotalItStaffingProgramSpend": "100000",
+  "NoOfSuppliers": "5",
+  "NoOfSuppliersIt": "3",
+  "ClientLogo": "",
+  "ClientAcquisitionPursuitNote": "notes",
+  "IsActive": "true",
+  "IsDeleted": "false",
+  "CreatedBy": {
+    "UserId": "16",
+    "UserName": "John"
+  },
+  "CreatedOn": "2018-05-21T07:10:30.000",
+  "UpdatedBy": {
+    "UserId": "16",
+    "UserName": "John"
+  },
+  "UpdatedOn": "2018-07-13T15:30.000"
+},
 ]
