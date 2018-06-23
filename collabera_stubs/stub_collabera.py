@@ -33,34 +33,45 @@ class clients_list(Resource):
     def get(self,clientName):
         data_set = json.loads(open("DATA_SET.json","r").read())
         # print(data_set[0]["ClientName"], data_set[0]["ClientName"].find(clientName))
-        data_set = {"Results":[i for i in data_set if i["ClientName"].lower().find(clientName.lower())>=0]}
+        result = [i for i in data_set if i["ClientName"].lower().find(clientName.lower())>=0]
+        data_set = {"Results":result, "Count":len(result)}
         return jsonify(data_set)
 
 class clients(Resource):
 
     def get(self):
-        data_set = json.loads(open("DATA_SET.json","r").read())
-        return jsonify({"Results":data_set})
+        if request.url.find("?location")>=0:
+            location = request.url.split("?location=")[-1].lower()
+            data_set = json.loads(open("DATA_SET.json","r").read())
+            # d_set_l = {"CorporateHqCountry":"CountryName","CorporateHqState":"StateName","CorporateHqCity":"CityName"}
+            data_set_f = [client for client in data_set  if location in [client["CorporateHqCountry"]["CountryName"].lower(),client["CorporateHqState"]["StateName"].lower(),client["CorporateHqCity"]["CityName"].lower()]]
+            return jsonify({"Results":data_set_f, "Count":len(data_set_f)})
+        elif not request.url.split("/clients")[-1]:
+            return jsonify({"Results":"Invalid Query", "Count": 0})
+        else:
+            data_set = json.loads(open("DATA_SET.json","r").read())
+            return jsonify({"Results":data_set, "Count":len(data_set)})
+        
 
 class fav_client(Resource):
 
     def get(self):
         data_set = json.loads(open("Fav_JSON.json","r").read())
-        return jsonify({"Results":data_set})
+        return jsonify({"Results":data_set, "Count": len(data_set)})
 
 
 class contact_client(Resource):
 
     def get(self,clientName):
         data_set = json.loads(open("DATA_SET.json","r").read())
-        return jsonify({"Results":data_set})
+        return jsonify({"Results":data_set, "Count": len(data_set)})
 
 
 class my_to_dos(Resource):
 
     def get(self,date=None):
         data_set = json.loads(open("./ToDo-DB/mytodos.json").read())
-        return jsonify({"Results":data_set})
+        return jsonify({"Results":data_set, "Count": len(data_set)})
 
 class update_to_dos(Resource):
 
