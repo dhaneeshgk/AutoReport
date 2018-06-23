@@ -1,1136 +1,1137 @@
 [
-{
-  "ClientId": "1",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP001",
-  "ClientName": "IBM India Pvt Ltd",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "5",
-    "ClientBelongstoName": "Canada"
-  },
-  "ClientSector": {
-    "ClientSectorId": "4",
-    "ClientSectorName": "Finance"
-  },
-  "Division": {
-    "DivisionId": "3",
-    "DivisionName": "IT Services"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-06-12",
-  "PhoneNo": "13029870098",
-  "BuHead": "Anjani Kumar",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "India"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "Karnataka"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Bangalore"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "34",
-    "UserName": "Susan Brenda"
-  },
-  "CreatedOn": "2018-05-28T14:30:00.000",
-  "UpdatedBy": {
-    "UserId": "34",
-    "UserName": "Susan Brenda"
-  },
-  "UpdatedOn": "2018-05-28T14:30:00.000"
-},
-{
-  "ClientId": "2",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP002",
-  "ClientName": "IBM Labs",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "3",
-    "ClientBelongstoName": "WebXL"
-  },
-  "ClientSector": {
-    "ClientSectorId": "4",
-    "ClientSectorName": "Engineering"
-  },
-  "Division": {
-    "DivisionId": "3",
-    "DivisionName": "IT Services"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-04-11",
-  "PhoneNo": "13027870098",
-  "BuHead": "John David",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "India"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "Andhra Pradesh"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Hyderabad"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "35",
-    "UserName": "Joy"
-  },
-  "CreatedOn": "2018-06-02T8:30:00.000",
-  "UpdatedBy": {
-    "UserId": "35",
-    "UserName": "Joy"
-  },
-  "UpdatedOn": "2018-05-02T10:10:00.000"
-},
-{
-  "ClientId": "3",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP003",
-  "ClientName": "IBM Cannada",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "4",
-    "ClientBelongstoName": "Brillio"
-  },
-  "ClientSector": {
-    "ClientSectorId": "4",
-    "ClientSectorName": "Government"
-  },
-  "Division": {
-    "DivisionId": "3",
-    "DivisionName": "CnM"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-02-10",
-  "PhoneNo": "13029870198",
-  "BuHead": "Kushal",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "Canada"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "Alberta"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Greenville"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "10",
-    "UserName": "Mark"
-  },
-  "CreatedOn": "2018-05-18T14:30:00.000",
-  "UpdatedBy": {
-    "UserId": "10",
-    "UserName": "Mark"
-  },
-  "UpdatedOn": "2018-06-28T14:30:00.000"
-},
-{
-  "ClientId": "4",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP004",
-  "ClientName": "IBM US",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "1",
-    "ClientBelongstoName": "Inc"
-  },
-  "ClientSector": {
-    "ClientSectorId": "8",
-    "ClientSectorName": "Services"
-  },
-  "Division": {
-    "DivisionId": "4",
-    "DivisionName": "MRL"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-01-01",
-  "PhoneNo": "13029870298",
-  "BuHead": "James",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "US"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "California"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Los Angeles"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "04",
-    "UserName": "Lia"
-  },
-  "CreatedOn": "2018-03-30T12:30:00.000",
-  "UpdatedBy": {
-    "UserId": "04",
-    "UserName": "Lia"
-  },
-  "UpdatedOn": "2018-04-10T10:30:00.000"
-},
-{
-  "ClientId": "5",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP005",
-  "ClientName": "Microsoft",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "2",
-    "ClientBelongstoName": "Canada"
-  },
-  "ClientSector": {
-    "ClientSectorId": "5",
-    "ClientSectorName": "Insurance"
-  },
-  "Division": {
-    "DivisionId": "2",
-    "DivisionName": "FS"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-03-25",
-  "PhoneNo": "13029870498",
-  "BuHead": "Hary James",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "India"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "Tamil Nadu"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Chennai"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "15",
-    "UserName": "George"
-  },
-  "CreatedOn": "2018-07-20T15:30:00.000",
-  "UpdatedBy": {
-    "UserId": "15",
-    "UserName": "George"
-  },
-  "UpdatedOn": "2018-07-25T14:30:00.000"
-},
-{
- "ClientId": "6",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP006",
-  "ClientName": "Microsoft Redmond",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "4",
-    "ClientBelongstoName": "Brillio"
-  },
-  "ClientSector": {
-    "ClientSectorId": "5",
-    "ClientSectorName": "Insurance"
-  },
-  "Division": {
-    "DivisionId": "2",
-    "DivisionName": "FS"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-04-20",
-  "PhoneNo": "13029870491",
-  "BuHead": "Ben James",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "US"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "Washington"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Redmond"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "22",
-    "UserName": "George Mark"
-  },
-  "CreatedOn": "2018-06-23T15:10:15.000",
-  "UpdatedBy": {
-    "UserId": "22",
-    "UserName": "George Mark"
-  },
-  "UpdatedOn": "2018-06-27T14:15:30.000"
-},
-{
- "ClientId": "7",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP007",
-  "ClientName": "Microsoft Hyderabad Pvt Ltd",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "4",
-    "ClientBelongstoName": "Brillio"
-  },
-  "ClientSector": {
-    "ClientSectorId": "5",
-    "ClientSectorName": "Entertainment"
-  },
-  "Division": {
-    "DivisionId": "2",
-    "DivisionName": "FS"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-02-15",
-  "PhoneNo": "13029870492",
-  "BuHead": "Girish",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "India"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "Andhra Pradesh"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Hyderabad"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "25",
-    "UserName": "Ela"
-  },
-  "CreatedOn": "2018-06-23T15:10:15.000",
-  "UpdatedBy": {
-    "UserId": "22",
-    "UserName": "Ela"
-  },
-  "UpdatedOn": "2018-07-27T14:15:30.000"
-},
-{
- "ClientId": "8",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP008",
-  "ClientName": "Microsoft Bangalore Ltd",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "4",
-    "ClientBelongstoName": "WebXL"
-  },
-  "ClientSector": {
-    "ClientSectorId": "2",
-    "ClientSectorName": "Entertainment"
-  },
-  "Division": {
-    "DivisionId": "5",
-    "DivisionName": "Other"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-02-15",
-  "PhoneNo": "13029870492",
-  "BuHead": "Manju",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "India"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "Karnataka"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Bangalore"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "30",
-    "UserName": "Justin"
-  },
-  "CreatedOn": "2018-06-23T15:10:15.000",
-  "UpdatedBy": {
-    "UserId": "30",
-    "UserName": "Justin"
-  },
-  "UpdatedOn": "2018-08-01T05:30.000"
-},
-{
- "ClientId": "9",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP009",
-  "ClientName": "Microsoft Pvt Ltd",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "2",
-    "ClientBelongstoName": "Canada"
-  },
-  "ClientSector": {
-    "ClientSectorId": "7",
-    "ClientSectorName": "Pharmaceuticals"
-  },
-  "Division": {
-    "DivisionId": "5",
-    "DivisionName": "Other"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-02-15",
-  "PhoneNo": "13029870493",
-  "BuHead": "Chakor",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "India"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "Kerala"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Kochi"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "14",
-    "UserName": "John David"
-  },
-  "CreatedOn": "2018-04-11T15:10:30.000",
-  "UpdatedBy": {
-    "UserId": "14",
-    "UserName": "John David"
-  },
-  "UpdatedOn": "2018-05-13T14:30.000"
-},
-{
- "ClientId": "10",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP010",
-  "ClientName": "Adobe Systems Pvt Limited",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "2",
-    "ClientBelongstoName": "Canada"
-  },
-  "ClientSector": {
-    "ClientSectorId": "9",
-    "ClientSectorName": "Telecom"
-  },
-  "Division": {
-    "DivisionId": "1",
-    "DivisionName": "CnM"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-03-27",
-  "PhoneNo": "13029870494",
-  "BuHead": "Mark John",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "India"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "New Delhi"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Gurgaon"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "16",
-    "UserName": "John"
-  },
-  "CreatedOn": "2018-05-21T07:10:30.000",
-  "UpdatedBy": {
-    "UserId": "16",
-    "UserName": "John"
-  },
-  "UpdatedOn": "2018-07-13T15:30.000"
-},
-{
- "ClientId": "11",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP011",
-  "ClientName": "Adobe US",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "2",
-    "ClientBelongstoName": "Canada"
-  },
-  "ClientSector": {
-    "ClientSectorId": "9",
-    "ClientSectorName": "Telecom"
-  },
-  "Division": {
-    "DivisionId": "1",
-    "DivisionName": "CnM"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-03-27",
-  "PhoneNo": "13029870494",
-  "BuHead": "Mark John",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "US"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "Texas"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Houston"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "16",
-    "UserName": "John"
-  },
-  "CreatedOn": "2018-05-21T07:10:30.000",
-  "UpdatedBy": {
-    "UserId": "16",
-    "UserName": "John"
-  },
-  "UpdatedOn": "2018-07-13T15:30.000"
-},
-{
- "ClientId": "12",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP012",
-  "ClientName": "Google",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "2",
-    "ClientBelongstoName": "Canada"
-  },
-  "ClientSector": {
-    "ClientSectorId": "9",
-    "ClientSectorName": "Telecom"
-  },
-  "Division": {
-    "DivisionId": "1",
-    "DivisionName": "CnM"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-03-27",
-  "PhoneNo": "13029870494",
-  "BuHead": "Mark John",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "India"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "Karnataka"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Bangalore"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "16",
-    "UserName": "John"
-  },
-  "CreatedOn": "2018-05-21T07:10:30.000",
-  "UpdatedBy": {
-    "UserId": "16",
-    "UserName": "John"
-  },
-  "UpdatedOn": "2018-07-13T15:30.000"
-},
-{
- "ClientId": "14",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP014",
-  "ClientName": "Google US",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "2",
-    "ClientBelongstoName": "Canada"
-  },
-  "ClientSector": {
-    "ClientSectorId": "9",
-    "ClientSectorName": "Telecom"
-  },
-  "Division": {
-    "DivisionId": "1",
-    "DivisionName": "CnM"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-03-27",
-  "PhoneNo": "13029870494",
-  "BuHead": "Mark John",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "US"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "England"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Prague"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "16",
-    "UserName": "John"
-  },
-  "CreatedOn": "2018-05-21T07:10:30.000",
-  "UpdatedBy": {
-    "UserId": "16",
-    "UserName": "John"
-  },
-  "UpdatedOn": "2018-07-13T15:30.000"
-},
-{
- "ClientId": "13",
-  "Organization": {
-    "OrganizationId": "1",
-    "OrginizationName": "US Enterprise"
-  },
-  "ClientCode": "TMP013",
-  "ClientName": "Google Europe",
-  "ClientStatus": {
-    "ClientStatusId": "TEMP",
-    "ClientStatusName": "Temporary"
-  },
-  "ClientBelongsto": {
-    "ClientBelongstoId": "2",
-    "ClientBelongstoName": "Canada"
-  },
-  "ClientSector": {
-    "ClientSectorId": "9",
-    "ClientSectorName": "Telecom"
-  },
-  "Division": {
-    "DivisionId": "1",
-    "DivisionName": "CnM"
-  },
-  "Region": {
-    "RegionId": "3",
-    "RegionName": "Austin"
-  },
-  "ClientType": {
-    "ClientTypeId": "2",
-    "ClientTypeName": "Regional"
-  },
-  "EffectiveDate": "2018-03-27",
-  "PhoneNo": "13029870494",
-  "BuHead": "Mark John",
-  "CorporateHqCountry": {
-    "CountryId": "3",
-    "CountryName": "United Kingdom"
-  },
-  "CorporateHqState": {
-    "StateId": "2",
-    "StateName": "England"
-  },
-  "CorporateHqCity": {
-    "CityId": "2",
-    "CityName": "Prague"
-  },
-  "ClientLeadSource": {
-    "ClientLeadSourceId": "5",
-    "ClientLeadSourceName": "Cold Calling"
-  },
-  "TotalRevenue": "50789908",
-  "IsFortune500": "true",
-  "Msp": {
-    "MspId": "7",
-    "MspName": "Bartech"
-  },
-  "Vms": {
-    "VmsId": "8",
-    "VmsName": "Beeline"
-  },
-  "TotalItSpend": "409890",
-  "TotalStaffingProgramSpend": "100000",
-  "TotalItStaffingProgramSpend": "100000",
-  "NoOfSuppliers": "5",
-  "NoOfSuppliersIt": "3",
-  "ClientLogo": "",
-  "ClientAcquisitionPursuitNote": "notes",
-  "IsActive": "true",
-  "IsDeleted": "false",
-  "CreatedBy": {
-    "UserId": "16",
-    "UserName": "John"
-  },
-  "CreatedOn": "2018-05-21T07:10:30.000",
-  "UpdatedBy": {
-    "UserId": "16",
-    "UserName": "John"
-  },
-  "UpdatedOn": "2018-07-13T15:30.000"
-},
+  {
+    "ClientId": "1",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP001",
+    "ClientName": "IBM India Pvt Ltd",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "5",
+      "ClientBelongstoName": "Canada"
+    },
+    "ClientSector": {
+      "ClientSectorId": "4",
+      "ClientSectorName": "Finance"
+    },
+    "Division": {
+      "DivisionId": "3",
+      "DivisionName": "IT Services"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-06-12",
+    "PhoneNo": "13029870098",
+    "BuHead": "Anjani Kumar",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "India"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Karnataka"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Bangalore"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "34",
+      "UserName": "Susan Brenda"
+    },
+    "CreatedOn": "2018-05-28T14:30:00.000",
+    "UpdatedBy": {
+      "UserId": "34",
+      "UserName": "Susan Brenda"
+    },
+    "UpdatedOn": "2018-05-28T14:30:00.000"
+  },
+  {
+    "ClientId": "2",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP002",
+    "ClientName": "IBM Labs",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "3",
+      "ClientBelongstoName": "WebXL"
+    },
+    "ClientSector": {
+      "ClientSectorId": "4",
+      "ClientSectorName": "Engineering"
+    },
+    "Division": {
+      "DivisionId": "3",
+      "DivisionName": "IT Services"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-04-11",
+    "PhoneNo": "13027870098",
+    "BuHead": "John David",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "India"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Andhra Pradesh"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Hyderabad"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "35",
+      "UserName": "Joy"
+    },
+    "CreatedOn": "2018-06-02T8:30:00.000",
+    "UpdatedBy": {
+      "UserId": "35",
+      "UserName": "Joy"
+    },
+    "UpdatedOn": "2018-05-02T10:10:00.000"
+  },
+  {
+    "ClientId": "3",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP003",
+    "ClientName": "IBM Cannada",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "4",
+      "ClientBelongstoName": "Brillio"
+    },
+    "ClientSector": {
+      "ClientSectorId": "4",
+      "ClientSectorName": "Government"
+    },
+    "Division": {
+      "DivisionId": "3",
+      "DivisionName": "CnM"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-02-10",
+    "PhoneNo": "13029870198",
+    "BuHead": "Kushal",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "Canada"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Alberta"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Greenville"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "10",
+      "UserName": "Mark"
+    },
+    "CreatedOn": "2018-05-18T14:30:00.000",
+    "UpdatedBy": {
+      "UserId": "10",
+      "UserName": "Mark"
+    },
+    "UpdatedOn": "2018-06-28T14:30:00.000"
+  },
+  {
+    "ClientId": "4",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP004",
+    "ClientName": "IBM US",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "1",
+      "ClientBelongstoName": "Inc"
+    },
+    "ClientSector": {
+      "ClientSectorId": "8",
+      "ClientSectorName": "Services"
+    },
+    "Division": {
+      "DivisionId": "4",
+      "DivisionName": "MRL"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-01-01",
+    "PhoneNo": "13029870298",
+    "BuHead": "James",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "US"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "California"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Los Angeles"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "04",
+      "UserName": "Lia"
+    },
+    "CreatedOn": "2018-03-30T12:30:00.000",
+    "UpdatedBy": {
+      "UserId": "04",
+      "UserName": "Lia"
+    },
+    "UpdatedOn": "2018-04-10T10:30:00.000"
+  },
+  {
+    "ClientId": "5",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP005",
+    "ClientName": "Microsoft",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "2",
+      "ClientBelongstoName": "Canada"
+    },
+    "ClientSector": {
+      "ClientSectorId": "5",
+      "ClientSectorName": "Insurance"
+    },
+    "Division": {
+      "DivisionId": "2",
+      "DivisionName": "FS"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-03-25",
+    "PhoneNo": "13029870498",
+    "BuHead": "Hary James",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "India"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Tamil Nadu"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Chennai"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "15",
+      "UserName": "George"
+    },
+    "CreatedOn": "2018-07-20T15:30:00.000",
+    "UpdatedBy": {
+      "UserId": "15",
+      "UserName": "George"
+    },
+    "UpdatedOn": "2018-07-25T14:30:00.000"
+  },
+  {
+    "ClientId": "6",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP006",
+    "ClientName": "Microsoft Redmond",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "4",
+      "ClientBelongstoName": "Brillio"
+    },
+    "ClientSector": {
+      "ClientSectorId": "5",
+      "ClientSectorName": "Insurance"
+    },
+    "Division": {
+      "DivisionId": "2",
+      "DivisionName": "FS"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-04-20",
+    "PhoneNo": "13029870491",
+    "BuHead": "Ben James",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "US"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Washington"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Redmond"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "22",
+      "UserName": "George Mark"
+    },
+    "CreatedOn": "2018-06-23T15:10:15.000",
+    "UpdatedBy": {
+      "UserId": "22",
+      "UserName": "George Mark"
+    },
+    "UpdatedOn": "2018-06-27T14:15:30.000"
+  },
+  {
+    "ClientId": "7",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP007",
+    "ClientName": "Microsoft Hyderabad Pvt Ltd",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "4",
+      "ClientBelongstoName": "Brillio"
+    },
+    "ClientSector": {
+      "ClientSectorId": "5",
+      "ClientSectorName": "Entertainment"
+    },
+    "Division": {
+      "DivisionId": "2",
+      "DivisionName": "FS"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-02-15",
+    "PhoneNo": "13029870492",
+    "BuHead": "Girish",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "India"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Andhra Pradesh"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Hyderabad"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "25",
+      "UserName": "Ela"
+    },
+    "CreatedOn": "2018-06-23T15:10:15.000",
+    "UpdatedBy": {
+      "UserId": "22",
+      "UserName": "Ela"
+    },
+    "UpdatedOn": "2018-07-27T14:15:30.000"
+  },
+  {
+    "ClientId": "8",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP008",
+    "ClientName": "Microsoft Bangalore Ltd",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "4",
+      "ClientBelongstoName": "WebXL"
+    },
+    "ClientSector": {
+      "ClientSectorId": "2",
+      "ClientSectorName": "Entertainment"
+    },
+    "Division": {
+      "DivisionId": "5",
+      "DivisionName": "Other"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-02-15",
+    "PhoneNo": "13029870492",
+    "BuHead": "Manju",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "India"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Karnataka"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Bangalore"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "30",
+      "UserName": "Justin"
+    },
+    "CreatedOn": "2018-06-23T15:10:15.000",
+    "UpdatedBy": {
+      "UserId": "30",
+      "UserName": "Justin"
+    },
+    "UpdatedOn": "2018-08-01T05:30.000"
+  },
+  {
+    "ClientId": "9",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP009",
+    "ClientName": "Microsoft Pvt Ltd",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "2",
+      "ClientBelongstoName": "Canada"
+    },
+    "ClientSector": {
+      "ClientSectorId": "7",
+      "ClientSectorName": "Pharmaceuticals"
+    },
+    "Division": {
+      "DivisionId": "5",
+      "DivisionName": "Other"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-02-15",
+    "PhoneNo": "13029870493",
+    "BuHead": "Chakor",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "India"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Kerala"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Kochi"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "14",
+      "UserName": "John David"
+    },
+    "CreatedOn": "2018-04-11T15:10:30.000",
+    "UpdatedBy": {
+      "UserId": "14",
+      "UserName": "John David"
+    },
+    "UpdatedOn": "2018-05-13T14:30.000"
+  },
+  {
+    "ClientId": "10",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP010",
+    "ClientName": "Adobe Systems Pvt Limited",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "2",
+      "ClientBelongstoName": "Canada"
+    },
+    "ClientSector": {
+      "ClientSectorId": "9",
+      "ClientSectorName": "Telecom"
+    },
+    "Division": {
+      "DivisionId": "1",
+      "DivisionName": "CnM"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-03-27",
+    "PhoneNo": "13029870494",
+    "BuHead": "Mark John",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "India"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "New Delhi"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Gurgaon"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "16",
+      "UserName": "John"
+    },
+    "CreatedOn": "2018-05-21T07:10:30.000",
+    "UpdatedBy": {
+      "UserId": "16",
+      "UserName": "John"
+    },
+    "UpdatedOn": "2018-07-13T15:30.000"
+  },
+  {
+    "ClientId": "11",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP011",
+    "ClientName": "Adobe US",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "2",
+      "ClientBelongstoName": "Canada"
+    },
+    "ClientSector": {
+      "ClientSectorId": "9",
+      "ClientSectorName": "Telecom"
+    },
+    "Division": {
+      "DivisionId": "1",
+      "DivisionName": "CnM"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-03-27",
+    "PhoneNo": "13029870494",
+    "BuHead": "Mark John",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "US"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Texas"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Houston"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "16",
+      "UserName": "John"
+    },
+    "CreatedOn": "2018-05-21T07:10:30.000",
+    "UpdatedBy": {
+      "UserId": "16",
+      "UserName": "John"
+    },
+    "UpdatedOn": "2018-07-13T15:30.000"
+  },
+  {
+    "ClientId": "12",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP012",
+    "ClientName": "Google",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "2",
+      "ClientBelongstoName": "Canada"
+    },
+    "ClientSector": {
+      "ClientSectorId": "9",
+      "ClientSectorName": "Telecom"
+    },
+    "Division": {
+      "DivisionId": "1",
+      "DivisionName": "CnM"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-03-27",
+    "PhoneNo": "13029870494",
+    "BuHead": "Mark John",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "India"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Karnataka"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Bangalore"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "16",
+      "UserName": "John"
+    },
+    "CreatedOn": "2018-05-21T07:10:30.000",
+    "UpdatedBy": {
+      "UserId": "16",
+      "UserName": "John"
+    },
+    "UpdatedOn": "2018-07-13T15:30.000"
+  },
+  {
+    "ClientId": "14",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP014",
+    "ClientName": "Google US",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "2",
+      "ClientBelongstoName": "Canada"
+    },
+    "ClientSector": {
+      "ClientSectorId": "9",
+      "ClientSectorName": "Telecom"
+    },
+    "Division": {
+      "DivisionId": "1",
+      "DivisionName": "CnM"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-03-27",
+    "PhoneNo": "13029870494",
+    "BuHead": "Mark John",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "US"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "England"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Prague"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "16",
+      "UserName": "John"
+    },
+    "CreatedOn": "2018-05-21T07:10:30.000",
+    "UpdatedBy": {
+      "UserId": "16",
+      "UserName": "John"
+    },
+    "UpdatedOn": "2018-07-13T15:30.000"
+  },
+  {
+    "ClientId": "13",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP013",
+    "ClientName": "Google Europe",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "2",
+      "ClientBelongstoName": "Canada"
+    },
+    "ClientSector": {
+      "ClientSectorId": "9",
+      "ClientSectorName": "Telecom"
+    },
+    "Division": {
+      "DivisionId": "1",
+      "DivisionName": "CnM"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-03-27",
+    "PhoneNo": "13029870494",
+    "BuHead": "Mark John",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "United Kingdom"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "England"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Prague"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "16",
+      "UserName": "John"
+    },
+    "CreatedOn": "2018-05-21T07:10:30.000",
+    "UpdatedBy": {
+      "UserId": "16",
+      "UserName": "John"
+    },
+    "UpdatedOn": "2018-07-13T15:30.000"
+  }
+  
 ]
