@@ -34,8 +34,17 @@ class clients_list(Resource):
         data_set = json.loads(open("DATA_SET.json","r").read())
         # print(data_set[0]["ClientName"], data_set[0]["ClientName"].find(clientName))
         result = [i for i in data_set if i["ClientName"].lower().find(clientName.lower())>=0]
-        data_set = {"Results":result, "Count":len(result)}
-        return jsonify(data_set)
+        data_set = result
+
+        if request.url.find("?location")>=0:
+            location = request.url.split("?location=")[-1].lower()
+            # d_set_l = {"CorporateHqCountry":"CountryName","CorporateHqState":"StateName","CorporateHqCity":"CityName"}
+            data_set_f = [client for client in data_set  if location in [client["CorporateHqCountry"]["CountryName"].lower(),client["CorporateHqState"]["StateName"].lower(),client["CorporateHqCity"]["CityName"].lower()]]
+            return jsonify({"Results":data_set_f, "Count":len(data_set_f)})
+        else:
+            data_set_f = data_set
+
+        return jsonify({"Results":data_set_f, "Count":len(data_set_f)})
 
 class clients(Resource):
 
@@ -63,8 +72,17 @@ class fav_client(Resource):
 class contact_client(Resource):
 
     def get(self,clientName):
-        data_set = json.loads(open("DATA_SET.json","r").read())
-        return jsonify({"Results":data_set, "Count": len(data_set)})
+        data_set = [i for i in json.loads(open("DATA_SET.json","r").read()) if i["ClientName"].find(clientName)>=0]
+
+        if request.url.find("?location")>=0:
+            location = request.url.split("?location=")[-1].lower()
+            # d_set_l = {"CorporateHqCountry":"CountryName","CorporateHqState":"StateName","CorporateHqCity":"CityName"}
+            data_set_f = [client for client in data_set  if location in [client["CorporateHqCountry"]["CountryName"].lower(),client["CorporateHqState"]["StateName"].lower(),client["CorporateHqCity"]["CityName"].lower()]]
+            return jsonify({"Results":data_set_f, "Count":len(data_set_f)})
+        else:
+            data_set_f = data_set 
+
+        return jsonify({"Results":data_set_f, "Count": len(data_set_f)})
 
 
 class my_to_dos(Resource):
@@ -92,3 +110,7 @@ api.add_resource(clients, '/clients')
 api.add_resource(my_to_dos,'/org/us_entr/todos/users/me')
 api.add_resource(add_to_dos,'/org/us_entr/todos')
 api.add_resource(update_to_dos,'/org/us_entr/todos/<todo>/reminders')
+
+
+if __name__ == "__main__":
+    app.run(port=3200)
