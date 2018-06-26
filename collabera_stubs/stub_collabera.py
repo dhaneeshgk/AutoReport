@@ -31,10 +31,9 @@ class test_links_wittyparrot(Resource):
 class clients_list(Resource):
 
     def get(self,clientName):
-        data_set = json.loads(open("DATA_SET.json","r").read())
+        data_fetch = json.loads(open("DATA_SET.json","r").read())
         # print(data_set[0]["ClientName"], data_set[0]["ClientName"].find(clientName))
-        result = [i for i in data_set if i["ClientName"].lower().find(clientName.lower())>=0]
-        data_set = result
+        data_set = [i for i in data_fetch if i["ClientName"].lower().find(clientName.lower())>=0]
 
         if request.url.find("?location")>=0:
             location = request.url.split("?location=")[-1].lower()
