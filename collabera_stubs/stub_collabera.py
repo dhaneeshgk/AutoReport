@@ -31,6 +31,7 @@ class test_links_wittyparrot(Resource):
 class clients_list(Resource):
 
     def get(self,clientName):
+        clientName = clientName.replace("+"," ") # this as per the standards mention by chirag and prakhar
         data_fetch = json.loads(open("DATA_SET.json","r").read())
         # print(data_set[0]["ClientName"], data_set[0]["ClientName"].find(clientName))
         data_set = [i for i in data_fetch if i["ClientName"].lower().find(clientName.lower())>=0]
