@@ -34,7 +34,11 @@ class clients_list(Resource):
         clientName = clientName.replace("+"," ") # this as per the standards mention by chirag and prakhar
         data_fetch = json.loads(open("DATA_SET.json","r").read())
         # print(data_set[0]["ClientName"], data_set[0]["ClientName"].find(clientName))
-        data_set = [i for i in data_fetch if i["ClientName"].lower().find(clientName.lower())>=0]
+        if clientName.lower() in [i["ClientName"].lower() for i in data_fetch]:
+            data_set = [i for i in data_fetch if i["ClientName"].lower()==clientName.lower()]
+        else:
+            data_set = [i for i in data_fetch if i["ClientName"].lower().find(clientName.lower())>=0]
+        
 
         if request.url.find("?location")>=0:
             location = request.url.split("?location=")[-1].lower()
@@ -73,7 +77,11 @@ class contact_client(Resource):
 
     def get(self,clientName):
         clientName = clientName.replace("+"," ") # this as per the standards mention by chirag and prakhar
-        data_set = [i for i in json.loads(open("DATA_SET.json","r").read()) if i["ClientName"].find(clientName)>=0]
+        data_fetch = json.loads(open("DATA_SET.json","r").read())
+        if clientName.lower() in [i["ClientName"].lower() for i in data_fetch]:
+            data_set = [i for i in data_fetch if i["ClientName"].lower()==clientName.lower()]
+        else:
+            data_set = [i for i in data_fetch if i["ClientName"].lower().find(clientName.lower())>=0]
 
         if request.url.find("?location")>=0:
             location = request.url.split("?location=")[-1].lower()
