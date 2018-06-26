@@ -72,6 +72,7 @@ class fav_client(Resource):
 class contact_client(Resource):
 
     def get(self,clientName):
+        clientName = clientName.replace("+"," ") # this as per the standards mention by chirag and prakhar
         data_set = [i for i in json.loads(open("DATA_SET.json","r").read()) if i["ClientName"].find(clientName)>=0]
 
         if request.url.find("?location")>=0:
