@@ -34,7 +34,7 @@ class clients_list(Resource):
         clientName = clientName.replace("+"," ") # this as per the standards mention by chirag and prakhar
         data_fetch = json.loads(open("DATA_SET.json","r").read())
         # print(data_set[0]["ClientName"], data_set[0]["ClientName"].find(clientName))
-        if clientName.lower() in [i["ClientName"].lower() for i in data_fetch]:
+        if len(clientName.lower().split())>1 and clientName.lower() in [i["ClientName"].lower() for i in data_fetch]:
             data_set = [i for i in data_fetch if i["ClientName"].lower()==clientName.lower()]
         else:
             data_set = [i for i in data_fetch if i["ClientName"].lower().find(clientName.lower())>=0]
@@ -54,7 +54,7 @@ class clients(Resource):
 
     def get(self):
         if request.url.find("?location")>=0:
-            location = request.url.split("?location=")[-1].lower()
+            location = request.url.split("?location=")[-1].lower().replace("+"," ")
             data_set = json.loads(open("DATA_SET.json","r").read())
             # d_set_l = {"CorporateHqCountry":"CountryName","CorporateHqState":"StateName","CorporateHqCity":"CityName"}
             data_set_f = [client for client in data_set  if location in [client["CorporateHqCountry"]["CountryName"].lower(),client["CorporateHqState"]["StateName"].lower(),client["CorporateHqCity"]["CityName"].lower()]]
@@ -78,13 +78,13 @@ class contact_client(Resource):
     def get(self,clientName):
         clientName = clientName.replace("+"," ") # this as per the standards mention by chirag and prakhar
         data_fetch = json.loads(open("DATA_SET.json","r").read())
-        if clientName.lower() in [i["ClientName"].lower() for i in data_fetch]:
+        if len(clientName.lower().split())>1 and clientName.lower() in [i["ClientName"].lower() for i in data_fetch]:
             data_set = [i for i in data_fetch if i["ClientName"].lower()==clientName.lower()]
         else:
             data_set = [i for i in data_fetch if i["ClientName"].lower().find(clientName.lower())>=0]
 
         if request.url.find("?location")>=0:
-            location = request.url.split("?location=")[-1].lower()
+            location = request.url.split("?location=")[-1].lower().replace("+"," ")
             # d_set_l = {"CorporateHqCountry":"CountryName","CorporateHqState":"StateName","CorporateHqCity":"CityName"}
             data_set_f = [client for client in data_set  if location in [client["CorporateHqCountry"]["CountryName"].lower(),client["CorporateHqState"]["StateName"].lower(),client["CorporateHqCity"]["CityName"].lower()]]
             return jsonify({"Results":data_set_f, "Count":len(data_set_f)})
