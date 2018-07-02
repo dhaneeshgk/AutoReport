@@ -1,0 +1,245 @@
+[ {
+    "ClientId": "2",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP001",
+    "ClientName": "Microsoft",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "3",
+      "ClientBelongstoName": "WebXL"
+    },
+    "ClientSector": {
+      "ClientSectorId": "4",
+      "ClientSectorName": "Engineering"
+    },
+    "Division": {
+      "DivisionId": "3",
+      "DivisionName": "IT Services"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-04-11",
+    "PhoneNo": "13027870098",
+    "BuHead": "Aadhishankar",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "Canada"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Alberta"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Greenville"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "35",
+      "UserName": "Aahan"
+    },
+    "CreatedOn": "2018-06-02T8:30:00.000",
+    "UpdatedBy": {
+      "UserId": "35",
+      "UserName": "Aahan"
+    },
+    "UpdatedOn": "2018-05-02T10:10:00.000"
+  },
+  {
+    "ClientId": "3",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP001",
+    "ClientName": "Microsoft",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "4",
+      "ClientBelongstoName": "Brillio"
+    },
+    "ClientSector": {
+      "ClientSectorId": "4",
+      "ClientSectorName": "Government"
+    },
+    "Division": {
+      "DivisionId": "3",
+      "DivisionName": "CnM"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-02-10",
+    "PhoneNo": "13029870198",
+    "BuHead": "Badri Prasad",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "Canada"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Alberta"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Greenville"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "10",
+      "UserName": "Badrinath"
+    },
+    "CreatedOn": "2018-05-18T14:30:00.000",
+    "UpdatedBy": {
+      "UserId": "10",
+      "UserName": "Badrinath"
+    },
+    "UpdatedOn": "2018-06-28T14:30:00.000"
+  },
+  {
+    "ClientId": "5",
+    "Organization": {
+      "OrganizationId": "1",
+      "OrginizationName": "US Enterprise"
+    },
+    "ClientCode": "TMP001",
+    "ClientName": "Microsoft",
+    "ClientStatus": {
+      "ClientStatusId": "TEMP",
+      "ClientStatusName": "Temporary"
+    },
+    "ClientBelongsto": {
+      "ClientBelongstoId": "2",
+      "ClientBelongstoName": "Canada"
+    },
+    "ClientSector": {
+      "ClientSectorId": "5",
+      "ClientSectorName": "Insurance"
+    },
+    "Division": {
+      "DivisionId": "2",
+      "DivisionName": "FS"
+    },
+    "Region": {
+      "RegionId": "3",
+      "RegionName": "Austin"
+    },
+    "ClientType": {
+      "ClientTypeId": "2",
+      "ClientTypeName": "Regional"
+    },
+    "EffectiveDate": "2018-03-25",
+    "PhoneNo": "13029870498",
+    "BuHead": "Daiwik",
+    "CorporateHqCountry": {
+      "CountryId": "3",
+      "CountryName": "Canada"
+    },
+    "CorporateHqState": {
+      "StateId": "2",
+      "StateName": "Alberta"
+    },
+    "CorporateHqCity": {
+      "CityId": "2",
+      "CityName": "Greenville"
+    },
+    "ClientLeadSource": {
+      "ClientLeadSourceId": "5",
+      "ClientLeadSourceName": "Cold Calling"
+    },
+    "TotalRevenue": "50789908",
+    "IsFortune500": "true",
+    "Msp": {
+      "MspId": "7",
+      "MspName": "Bartech"
+    },
+    "Vms": {
+      "VmsId": "8",
+      "VmsName": "Beeline"
+    },
+    "TotalItSpend": "409890",
+    "TotalStaffingProgramSpend": "100000",
+    "TotalItStaffingProgramSpend": "100000",
+    "NoOfSuppliers": "5",
+    "NoOfSuppliersIt": "3",
+    "ClientLogo": "",
+    "ClientAcquisitionPursuitNote": "notes",
+    "IsActive": "true",
+    "IsDeleted": "false",
+    "CreatedBy": {
+      "UserId": "15",
+      "UserName": "Ekisha"
+    },
+    "CreatedOn": "2018-07-20T15:30:00.000",
+    "UpdatedBy": {
+      "UserId": "15",
+      "UserName": "Ekisha"
+    },
+    "UpdatedOn": "2018-07-25T14:30:00.000"
+  }
+  
+]

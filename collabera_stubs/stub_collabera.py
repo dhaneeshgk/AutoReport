@@ -32,7 +32,7 @@ class clients_list(Resource):
 
     def get(self,clientName):
         clientName = clientName.replace("+"," ") # this as per the standards mention by chirag and prakhar
-        data_fetch = json.loads(open("DATA_SET.json","r").read())
+        data_fetch = json.loads(open("./db/clients/clients.json","r").read()) ##json.loads(open("DATA_SET.json","r").read())
         # print(data_set[0]["ClientName"], data_set[0]["ClientName"].find(clientName))
         if len(clientName.lower().split())>1 and clientName.lower() in [i["ClientName"].lower() for i in data_fetch]:
             data_set = [i for i in data_fetch if i["ClientName"].lower()==clientName.lower()]
@@ -55,7 +55,7 @@ class clients(Resource):
     def get(self):
         if request.url.find("?location")>=0:
             location = request.url.split("?location=")[-1].lower().replace("+"," ")
-            data_set = json.loads(open("DATA_SET.json","r").read())
+            data_set = json.loads(open("./db/clients/clients.json","r").read()) ##json.loads(open("DATA_SET.json","r").read())
             # d_set_l = {"CorporateHqCountry":"CountryName","CorporateHqState":"StateName","CorporateHqCity":"CityName"}
             data_set_f = [client for client in data_set  if location in [client["CorporateHqCountry"]["CountryName"].lower(),client["CorporateHqState"]["StateName"].lower(),client["CorporateHqCity"]["CityName"].lower()]]
             return jsonify({"Results":data_set_f, "Count":len(data_set_f)})
@@ -69,7 +69,7 @@ class clients(Resource):
 class fav_client(Resource):
 
     def get(self):
-        data_set = json.loads(open("Fav_JSON.json","r").read())
+        data_set = json.loads(open("./db/clients/fav.json","r").read()) ##json.loads(open("Fav_JSON.json","r").read())
         return jsonify({"Results":data_set, "Count": len(data_set)})
 
 
@@ -77,7 +77,7 @@ class contact_client(Resource):
 
     def get(self,clientName):
         clientName = clientName.replace("+"," ") # this as per the standards mention by chirag and prakhar
-        data_fetch = json.loads(open("DATA_SET.json","r").read())
+        data_fetch = json.loads(open("./db/clients/clients.json","r").read()) ##json.loads(open("DATA_SET.json","r").read())
         if len(clientName.lower().split())>1 and clientName.lower() in [i["ClientName"].lower() for i in data_fetch]:
             data_set = [i for i in data_fetch if i["ClientName"].lower()==clientName.lower()]
         else:
@@ -97,7 +97,7 @@ class contact_client(Resource):
 class my_to_dos(Resource):
 
     def get(self,date=None):
-        data_set = json.loads(open("./ToDo-DB/mytodos.json").read())
+        data_set = json.loads(open("./db/todos/mytodos.json").read())
         return jsonify({"Results":data_set, "Count": len(data_set)})
 
 class update_to_dos(Resource):
@@ -111,6 +111,32 @@ class add_to_dos(Resource):
         return jsonify({"Results":"Successfully Added to do"})
 
 
+class contacts_list(Resource):
+
+    def get(self):
+        data_set = json.loads(open("./db/contacts/contacts.json").read())
+        return jsonify({"responseCode": 2000,"responseMessage": None,"errorType": None, "resultData": data_set})
+
+
+
+class fav_contact(Resource):
+
+    def post(self,contact_id):
+        return jsonify({"responseCode": 2000,"responseMessage": "conatct is added as favorite","errorType": None})
+
+
+class share_contact(Resource):
+
+    def post(self,contact_id):
+        return jsonify({"responseCode": 2000,"responseMessage": "conatct is shared as successfully","errorType": None})
+
+
+class reassign_contact(Resource):
+
+    def post(self, contact_id):
+        return jsonify({"responseCode": 2000,"responseMessage": "conatct is added as favorite","errorType": None})
+
+
 api.add_resource(test_links_wittyparrot,'/test_links_wittyparrot/')
 api.add_resource(clients_list, '/clients/clientName/<clientName>')
 api.add_resource(fav_client, '/clients/favorites')
@@ -119,6 +145,10 @@ api.add_resource(clients, '/clients')
 api.add_resource(my_to_dos,'/org/us_entr/todos/users/me')
 api.add_resource(add_to_dos,'/org/us_entr/todos')
 api.add_resource(update_to_dos,'/org/us_entr/todos/<todo>/reminders')
+api.add_resource(contacts_list,'/contacts')
+api.add_resource(fav_contact,'/contacts/favorites/<contact_id>')
+api.add_resource(share_contact,'/contacts/<contact_id>/share')
+
 
 
 if __name__ == "__main__":
