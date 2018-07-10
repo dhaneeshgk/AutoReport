@@ -60,8 +60,8 @@ class clients(Resource):
             data_set_f = [client for client in data_set  if location in [client["CorporateHqCountry"]["CountryName"].lower(),client["CorporateHqState"]["StateName"].lower(),client["CorporateHqCity"]["CityName"].lower()]]
             return jsonify({"Results":data_set_f, "Count":len(data_set_f)})
         elif request.url.split("/clients")[-1]:
-            return jsonify({"Results":"Invalid Query", "Count": 0})
-        else:
+            # return jsonify({"Results":"Invalid Query", "Count": 0})
+        # else:
             data_set = json.loads(open("DATA_SET.json","r").read())
             return jsonify({"Results":data_set, "Count":len(data_set)})
         
